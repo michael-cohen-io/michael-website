@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import Nav from "@/components/layout/nav";
+import cx from "classnames";
+import Footer from "@/components/layout/footer";
 
-const roboto = Roboto({ weight: "100", subsets: ["latin"] });
+const robotoThin = Roboto({ weight: "100", subsets: ["latin"] });
+const robotoNormal = Roboto({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "<MC>",
@@ -16,7 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={cx(robotoNormal.className, robotoThin.className)}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Nav />
+        </Suspense>
+        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
+          {children}
+        </main>
+        {"<Analytics />"}
+        <Footer />
+      </body>
     </html>
   );
 }

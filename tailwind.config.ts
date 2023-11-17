@@ -9,6 +9,15 @@ const config: Config = {
   theme: {
     colors: {
       "accent-color": "#3b82f6",
+      slate: {
+        300: "#cbd5e1",
+        400: "#94a3b8",
+        500: "#64748b",
+        600: "#475569",
+        700: "#334155",
+        800: "#1e293b",
+        900: "#0f172a",
+      },
     },
     extend: {
       backgroundImage: {
