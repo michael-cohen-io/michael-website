@@ -16,7 +16,7 @@ model WorkEntry {
   role        String
   description String
   startDate   DateTime
-  endDate     DateTime
+  endDate     DateTime?
   createdAt   DateTime @default(now())
 }
 
