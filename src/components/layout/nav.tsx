@@ -8,10 +8,8 @@ import { usePathname } from "next/navigation";
 function NavLink({ href, title }: { href: string; title: string }) {
   const pathname = usePathname();
   const isActive = pathname === href;
-  console.log(pathname, href, isActive);
   return (
     <Link href={href} className={`link ${isActive ? "active" : ""}`}>
-      {/* TODO figure this shit out */}
       <p
         className={`${
           isActive ? "font-thick text-accent-color" : ""
@@ -42,7 +40,7 @@ export default function Nav() {
               width="30"
               height="30"
               className="mr-2 rounded-sm"
-            ></Image>
+            />
             <p className="ml-3 text-accent-color">Michael Cohen</p>
           </Link>
           <div className="flex justify-between">

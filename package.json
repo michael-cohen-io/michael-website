@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prismaMigrateLocal": "dotenv -e .env.local -- pnpm dlx prisma migrate dev && dotenv -e .env.local -- pnpm dlx prisma generate",
+    "prismaMigrateLocalNoSeed": "dotenv -e .env.local -- pnpm dlx prisma migrate dev --skip-seed && dotenv -e .env.local -- pnpm dlx prisma generate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
