@@ -9,7 +9,19 @@ const config: Config = {
   theme: {
     colors: {
       "accent-color": "#3b82f6",
+      blue: {
+        50: "#eff6ff",
+        100: "#dbeafe",
+        200: "#bfdbfe",
+        300: "#93c5fd",
+        400: "#60a5fa",
+        500: "#3b82f6",
+        600: "#2563eb",
+        700: "#1d4ed8",
+        800: "#1e40af",
+      },
       slate: {
+        50: "#f8fafc",
         300: "#cbd5e1",
         400: "#94a3b8",
         500: "#64748b",

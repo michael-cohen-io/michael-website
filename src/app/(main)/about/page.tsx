@@ -5,8 +5,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <PageHeader title="About me" />
-      <div className="mx-5 flex max-w-screen-xl items-start justify-between w-full my-4">
+      <div className="flex max-w-screen-xl items-start justify-between w-full">
         <div className="z-10 w-full max-w-lg px-1 xl:px-0">
           <p className="font-light">
             How&apos;s it going? I&apos;m a software developer based out of
