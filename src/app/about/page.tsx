@@ -9,9 +9,9 @@ export default function About() {
       <div className="mx-5 flex max-w-screen-xl items-start justify-between w-full my-4">
         <div className="z-10 w-full max-w-lg px-1 xl:px-0">
           <p className="font-light">
-            How’s it going? I’m a software developer based out of Brooklyn, NY.
-            I currently work as the software development lead for the Creator
-            team at OpenSea.
+            How&apos;s it going? I&apos;m a software developer based out of
+            Brooklyn, NY. I currently work as the software development lead for
+            the Creator team at OpenSea.
           </p>
           <br />
           <p className="font-light">
@@ -24,8 +24,8 @@ export default function About() {
           <br />
           <p className="font-light">
             I went to the University of Florida, where I majored in Computer
-            Science and Entrepreneurship. I've been coding and tinkering with
-            computers since I was 8 years old.
+            Science and Entrepreneurship. I&apos;ve been coding and tinkering
+            with computers since I was 8 years old.
           </p>
           <br />
           <p className="font-light">

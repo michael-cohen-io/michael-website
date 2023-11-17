@@ -19,7 +19,7 @@ export default function Hero() {
             .
           </h2>
           <h2 className="text-left ml-3 font-thin text-4xl">
-            I'm a software engineer.
+            I&apos;m a software engineer.
           </h2>
         </div>
         <Image
