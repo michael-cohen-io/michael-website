@@ -8,7 +8,8 @@
     "prismaMigrateLocalNoSeed": "dotenv -e .env.local -- pnpm dlx prisma migrate dev --skip-seed && dotenv -e .env.local -- pnpm dlx prisma generate",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
@@ -16,6 +17,7 @@
     "classnames": "^2.3.2",
     "next": "14.0.3",
     "react": "^18",
+    "prisma": "^5.6.0",
     "react-dom": "^18"
   },
   "devDependencies": {
@@ -27,7 +29,6 @@
     "eslint-config-next": "14.0.3",
     "postcss": "^8",
     "prettier": "3.1.0",
-    "prisma": "^5.6.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
