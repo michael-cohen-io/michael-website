@@ -18,7 +18,7 @@ function WorkItem({ workItem }: any) {
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
-    borderColor: backgroundColor,
+    border: `0px solid ${backgroundColor}`,
     color: backgroundColor,
   };
   const dateStr = `${formatProjectDate(workItem.startDate)} - ${
@@ -29,7 +29,7 @@ function WorkItem({ workItem }: any) {
       className="vertical-timeline-element--work cursor-pointer"
       textClassName="work-item"
       contentStyle={{
-        boxShadow: "0 0 0 0",
+        boxShadow: "none",
         background: backgroundColor,
       }}
       contentArrowStyle={{

@@ -30,14 +30,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.vertical-timeline-element-icon {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
 
 .vertical-timeline-element-content h2 {
   color: var(--foreground-rgb) !important;
-}
-
-.vertical-timeline-element-content {
-  box-shadow: 0 !important;
-  -webkit-box-shadow: 0 !important;
 }
 
 .work-item {
