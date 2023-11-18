@@ -43,7 +43,7 @@ export default function About() {
           alt="Michael Profile image"
           width="400"
           height="400"
-          className="grayscale mr-2 rounded-3xl hover:grayscale-0"
+          className="grayscale mr-2 rounded-3xl hover:grayscale-0 drop-shadow-2xl"
         />
       </div>
     </>

@@ -16,9 +16,10 @@
     "@vercel/postgres": "^0.5.1",
     "classnames": "^2.3.2",
     "next": "14.0.3",
-    "react": "^18",
     "prisma": "^5.6.0",
-    "react-dom": "^18"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-vertical-timeline-component": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",

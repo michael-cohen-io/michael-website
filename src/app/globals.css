@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 203, 213, 225;
   --background-end-rgb: 248, 250, 252;
+  --accent-color: #3b82f6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +25,26 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.vertical-timeline-element-content h2 {
+  color: var(--foreground-rgb) !important;
+}
+
+.work-item {
+  background: var(--accent-color) !important;
+
+  .date {
+    color: var(--accent-color) !important;
+  }
+
+  .icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    left: auto;
+    top: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
 }
