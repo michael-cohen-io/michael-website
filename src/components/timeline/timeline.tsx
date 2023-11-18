@@ -6,12 +6,15 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { useRouter } from "next/navigation";
 
 function formatProjectDate(date: Date) {
   return date.toLocaleString("en-US", { month: "short", year: "numeric" });
 }
 
 function WorkItem({ workItem }: any) {
+  const router = useRouter();
+
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
@@ -37,6 +40,8 @@ function WorkItem({ workItem }: any) {
       iconClassName="icon"
       icon={<IconByName iconName={workItem.company.name} />}
       visible={true}
+      onTimelineElementClick={() => router.push(`/work/${workItem.id}`)}
+      iconOnClick={() => router.push(`/work/${workItem.id}`)}
     >
       <h2 className="vertical-timeline-element-title">
         {workItem.company.name} | {workItem.role}

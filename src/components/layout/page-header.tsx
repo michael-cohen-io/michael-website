@@ -1,6 +1,8 @@
 "use client";
 
 import { capitalize } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function PageHeader({
   title,
@@ -9,6 +11,9 @@ export default function PageHeader({
   title?: string;
   hidden?: boolean;
 }) {
+  const pathname = usePathname();
+  console.log(pathname, title);
+  const isActive = pathname === title;
   return title ? (
     <>
       <div
@@ -22,7 +27,11 @@ export default function PageHeader({
           }`}
         >
           <h1 className="text-slate-500 font-light text-2xl">
-            {capitalize(title)}
+            {isActive ? (
+              capitalize(title)
+            ) : (
+              <Link href={`/${title}`}>{capitalize(title)}</Link>
+            )}
           </h1>
         </div>
       </div>

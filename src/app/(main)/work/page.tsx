@@ -1,6 +1,5 @@
 import prisma from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
-import WorkTimeline from "./timeline";
+import WorkTimeline from "../../../components/timeline/timeline";
 
 async function fetchWorkData() {
   const workData = await prisma.workEntry.findMany({
