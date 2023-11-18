@@ -1,4 +1,5 @@
-import PageHeader from "@/components/layout/page-header";
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import Nav from "@/components/layout/nav";
@@ -22,7 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cx(robotoNormal.className, robotoThin.className)}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="fixed top-0 w-full flex justify-center">
+              <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
+                <p>Loading...</p>
+              </div>
+            </div>
+          }
+        >
           <Nav />
         </Suspense>
         <main>{children}</main>

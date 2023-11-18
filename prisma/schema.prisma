@@ -17,6 +17,7 @@ model WorkEntry {
   description String
   startDate   DateTime
   endDate     DateTime?
+  iconColor   String?
   createdAt   DateTime @default(now())
 }
 

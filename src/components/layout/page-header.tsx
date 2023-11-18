@@ -1,3 +1,5 @@
+"use client";
+
 import { capitalize } from "@/lib/utils";
 
 export default function PageHeader({
@@ -5,7 +7,7 @@ export default function PageHeader({
   hidden = false,
 }: {
   title?: string;
-  hidden: boolean;
+  hidden?: boolean;
 }) {
   return title ? (
     <>

@@ -9,7 +9,6 @@ async function fetchWorkData() {
       company: true,
     },
   });
-  console.log(workData);
   return workData;
 }
 

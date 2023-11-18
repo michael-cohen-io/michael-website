@@ -1,25 +1,41 @@
 "use client";
 
+import IconByName from "@/components/icons/icons";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+function formatProjectDate(date: Date) {
+  return date.toLocaleString("en-US", { month: "short", year: "numeric" });
+}
+
 function WorkItem({ workItem }: any) {
+  const backgroundColor = workItem.iconColor || "#3b82f6";
+  const iconStyle = {
+    background: backgroundColor,
+    color: "#333333",
+  };
+  const dateStr = `${formatProjectDate(workItem.startDate)} - ${
+    workItem.endDate ? formatProjectDate(workItem.endDate) : "Present"
+  }`;
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       textClassName="work-item"
       contentStyle={{
         boxShadow: "0 0 0 0",
+        background: backgroundColor,
       }}
       contentArrowStyle={{
         borderRight: "7px solid #3b82f6",
       }}
-      date={workItem.startDate.toLocaleDateString("en-US", {})}
+      date={dateStr}
       dateClassName="date"
+      iconStyle={iconStyle}
       iconClassName="icon"
+      icon={<IconByName iconName={workItem.company.name} />}
       visible={true}
     >
       <h2 className="vertical-timeline-element-title">
@@ -31,7 +47,6 @@ function WorkItem({ workItem }: any) {
 }
 
 export default function WorkTimeline({ workData }: { workData: any[] }) {
-  console.log("WorkTimeline!");
   return (
     <VerticalTimeline>
       {workData.map((work: any) => (
