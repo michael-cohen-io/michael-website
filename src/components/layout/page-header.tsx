@@ -12,7 +12,6 @@ export default function PageHeader({
   hidden?: boolean;
 }) {
   const pathname = usePathname();
-  console.log(pathname, title);
   const isActive = pathname === title;
   return title ? (
     <>

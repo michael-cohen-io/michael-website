@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import prisma from "@/lib/prisma";
 
 import SkillsTabSection from "./tabs";
 
 async function fetchSkills() {
-  const workData = await prisma.workEntry.findMany({
-    orderBy: [{ startDate: "desc" }],
+  const skills = await prisma.skill.findMany({
     include: {
-      company: true,
+      section: true,
     },
   });
-  return workData;
+  console.log(skills);
+  return skills;
 }
 
 export default async function Skills() {

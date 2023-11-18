@@ -10,6 +10,7 @@ import Tab from "@mui/material/Tab";
 const iconSize = "5em";
 
 function SkillItem({ skill }: { skill: any }) {
+  console.log(skill);
   return (
     <div>
       <Card>
@@ -59,33 +60,36 @@ function SkillsTabs({ skillsdivlection }: { skillsdivlection: any }) {
   };
 
   const skillsObj = skillsdivlection.reduce(
-    (map: { [x: string]: any }, obj: { [x: string]: any }) => {
-      Object.keys(obj).forEach((skillTree) => {
-        map[skillTree] = obj[skillTree];
-      });
-      return map;
+    (acc: { [x: string]: any }, skill: any) => {
+      if (acc[skill.section.name]) {
+        acc[skill.section.name].push(skill);
+      } else {
+        acc[skill.section.name] = [skill];
+      }
+      return acc;
     },
     {},
   );
+  //   console.log(skillsObj);
   const allSkills = Object.keys(skillsObj).flatMap((key) => skillsObj[key]);
+  console.log(allSkills);
   const skillsLabels = Object.keys(skillsObj);
-  const skillTabItems = (skillTree: { [x: string]: any }) => {
-    return Object.keys(skillTree).map((key) => (
-      <SkillItem skill={skillTree[key]} key={key} />
+  const skillTabItems = (section: [any]) => {
+    console.log(section);
+    return section.map((index) => (
+      <SkillItem skill={section[index]} key={index} />
     ));
   };
   const allTabPanel = (
     <SkillsTabPanel value={value} index={0} key="allSkillsTab">
       {allSkills.map((skillUnwrapped) => {
-        return Object.keys(skillUnwrapped).map((skillKey) => (
-          <SkillItem skill={skillUnwrapped[skillKey]} key={skillKey} />
-        ));
+        return <SkillItem skill={skillUnwrapped} key={skillUnwrapped.id} />;
       })}
     </SkillsTabPanel>
   );
-  const skillTabsPanels = Object.keys(skillsObj).map((skill, index) => (
-    <SkillsTabPanel value={value} index={index + 1} key={skill}>
-      {skillTabItems(skillsObj[skill])}
+  const skillTabsPanels = Object.keys(skillsObj).map((section, index) => (
+    <SkillsTabPanel value={value} index={index + 1} key={section}>
+      {skillTabItems(skillsObj[section])}
     </SkillsTabPanel>
   ));
   return (
