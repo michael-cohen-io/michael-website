@@ -9,23 +9,23 @@ export default function About() {
       <div className="flex max-w-screen-xl items-start justify-between w-full">
         <div className="z-10 w-full max-w-lg px-1 xl:px-0">
           <p className="font-light">
-            How&apos;s it going? I&apos;m a software developer based out of
-            Brooklyn, NY. I currently work as the software development lead for
-            the Creator team at OpenSea.
+            Greetings! I&apos;m a software developer based out of Brooklyn, NY.
+            I currently work as the Engineering Manager for the Creator team at
+            OpenSea.
           </p>
           <br />
           <p className="font-light">
-            We are focused on providing the best in class tools for creators in
-            a one stop shop on OpenSea. We aim to be the most trusted and
-            versatile tool for any crypto-curious creators who are looking to
-            enter the world of web3 without needing to know its highly technical
-            details.
+            Our team is dedicated to furnishing top-tier tools tailored for
+            creators, all available conveniently and safely within OpenSea's
+            Creator Studio. We aim to be the most trusted and versatile tool for
+            any crypto-curious creators who are looking to enter the world of
+            web3 without needing to know its highly technical details.
           </p>
           <br />
           <p className="font-light">
-            I went to the University of Florida, where I majored in Computer
-            Science and Entrepreneurship. I&apos;ve been coding and tinkering
-            with computers since I was 8 years old.
+            Outside of my current role, I am a lifelong learner with an interest
+            in building interesting and useful things. I'm a huge music & movie
+            fan, a regular at any and all NYC shows, and a novice snowboarder.
           </p>
           <br />
           <p className="font-light">
