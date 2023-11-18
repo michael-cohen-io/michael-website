@@ -7,10 +7,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useRouter } from "next/navigation";
-
-function formatProjectDate(date: Date) {
-  return date.toLocaleString("en-US", { month: "short", year: "numeric" });
-}
+import { formatDate } from "@/lib/utils";
 
 function WorkItem({ workItem }: any) {
   const router = useRouter();
@@ -21,9 +18,9 @@ function WorkItem({ workItem }: any) {
     border: `0px solid ${backgroundColor}`,
     color: backgroundColor,
   };
-  const dateStr = `${formatProjectDate(workItem.startDate)} - ${
-    workItem.endDate ? formatProjectDate(workItem.endDate) : "Present"
-  }`;
+  const dateStr = `${formatDate(workItem.startDate)} - ${formatDate(
+    workItem.endDate,
+  )}`;
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work cursor-pointer"

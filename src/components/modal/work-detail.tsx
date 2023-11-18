@@ -1,10 +1,11 @@
 "use client";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
+import { formatDate } from "@/lib/utils";
 
 function WorkDetailsModal({ workItem }: any) {
   return (
-    <>
+    <div className="flex justify-center">
       <DialogTitle>
         <h2 className="text-xl">{workItem.company.name}</h2>
       </DialogTitle>
@@ -14,21 +15,11 @@ function WorkDetailsModal({ workItem }: any) {
         </div>
         <div>
           <DialogContentText align="right">
-            {workItem.startDate.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-            })}{" "}
-            -{" "}
-            {workItem.endDate
-              ? workItem.endDate.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                })
-              : "Present"}
+            {formatDate(workItem.startDate)} - {formatDate(workItem.endDate)}
           </DialogContentText>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -42,17 +33,7 @@ function WorkDetailsCard({ workItem }: any) {
         </div>
         <div>
           <p className="text-sm">
-            {workItem.startDate.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-            })}{" "}
-            -{" "}
-            {workItem.endDate
-              ? workItem.endDate.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                })
-              : "Present"}
+            {formatDate(workItem.startDate)} - {formatDate(workItem.endDate)}
           </p>
         </div>
       </div>
