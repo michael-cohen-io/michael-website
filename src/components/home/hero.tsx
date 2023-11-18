@@ -22,6 +22,7 @@ export default function Hero() {
             cursor={{ hideWhenDone: true }}
             key={1}
             onTypingDone={onTypingDone}
+            avgTypingDelay={35}
           >
             <h1 className="text-left font-light text-6xl text-slate-500">
               hello, world.
@@ -33,6 +34,7 @@ export default function Hero() {
               cursor={{ hideWhenDone: true }}
               key={2}
               onTypingDone={onTypingDone}
+              avgTypingDelay={35}
             >
               <h2 className="text-left font-thin text-4xl">
                 My name is{" "}
@@ -49,6 +51,7 @@ export default function Hero() {
               cursor={{ hideWhenDone: true }}
               key={2}
               onTypingDone={onTypingDone}
+              avgTypingDelay={35}
             >
               <h2 className="text-left font-thin text-4xl">
                 I&apos;m a software engineer.
