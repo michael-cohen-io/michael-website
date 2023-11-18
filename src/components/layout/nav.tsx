@@ -12,8 +12,8 @@ function NavLink({ href, title }: { href: string; title: string }) {
     <Link href={href} className={`link ${isActive ? "active" : ""}`}>
       <p
         className={`${
-          isActive ? "font-thick text-accent-color" : ""
-        } text-lg mr-5`}
+          isActive ? "text-accent-color" : ""
+        } font-light text-lg mr-5`}
       >
         {title}
       </p>
@@ -33,7 +33,7 @@ export default function Nav() {
         } z-30 transition-all`}
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
-          <Link href="/" className="flex items-center font-display text-3xl">
+          <Link href="/" className="flex items-center font-light text-3xl">
             <p className="text-accent-color">{"<MC>"}</p>
             <p className="ml-3 text-accent-color">Michael Cohen</p>
           </Link>

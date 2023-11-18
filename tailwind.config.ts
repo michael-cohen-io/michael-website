@@ -8,6 +8,11 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['"Roboto Mono"'],
+      serif: ['"Roboto Mono"'],
+      mono: ['"Roboto Mono"'],
+    },
     colors: {
       "accent-color": "#3b82f6",
       blue: {

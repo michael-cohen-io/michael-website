@@ -3,11 +3,12 @@ import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import Nav from "@/components/layout/nav";
-import cx from "classnames";
 import Footer from "@/components/layout/footer";
 
-const robotoThin = Roboto_Mono({ weight: "100", subsets: ["latin"] });
-const robotoNormal = Roboto_Mono({ weight: "300", subsets: ["latin"] });
+const roboto = Roboto_Mono({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "<MC>",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(robotoNormal.className, robotoThin.className)}>
+      <body className={roboto.className}>
         <Suspense
           fallback={
             <div className="fixed top-0 w-full flex justify-center">

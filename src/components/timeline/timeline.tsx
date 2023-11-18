@@ -23,17 +23,18 @@ function WorkItem({ workItem }: any) {
   )}`;
   return (
     <VerticalTimelineElement
-      className="vertical-timeline-element--work cursor-pointer"
+      className="vertical-timeline-element--work cursor-pointer font-light"
       textClassName="work-item"
       contentStyle={{
         boxShadow: "none",
         background: backgroundColor,
+        color: "#fff",
       }}
       contentArrowStyle={{
         borderRight: `7px solid ${backgroundColor}`,
       }}
       date={dateStr}
-      dateClassName="date"
+      dateClassName="text-slate-500"
       iconStyle={iconStyle}
       iconClassName="icon"
       icon={<IconByName iconName={workItem.company.name} />}
