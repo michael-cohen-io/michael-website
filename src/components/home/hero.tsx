@@ -5,6 +5,7 @@ import Link from "next/link";
 import PageHeader from "../layout/page-header";
 import { useState } from "react";
 import Typist from "react-typist";
+import Fade from "react-reveal/Fade";
 
 export default function Hero() {
   const [typeCounter, setTypeCounter] = useState(0);
@@ -60,13 +61,21 @@ export default function Hero() {
             </Typist>
           )}
         </div>
-        <Image
-          src="/profile.jpg"
-          alt="Michael Profile image"
-          width="400"
-          height="400"
-          className="grayscale mr-2 rounded-3xl hover:grayscale-0 drop-shadow-2xl"
-        />
+        <Fade
+          right={true}
+          bottom={false}
+          duration={1500}
+          distance="30px"
+          when={typeCounter > 3}
+        >
+          <Image
+            src="/profile.jpg"
+            alt="Michael Profile image"
+            width="400"
+            height="400"
+            className="grayscale mr-2 rounded-3xl hover:grayscale-0 drop-shadow-2xl"
+          />
+        </Fade>
       </div>
     </>
   );
