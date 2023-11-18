@@ -9,7 +9,6 @@ async function fetchSkills() {
       section: true,
     },
   });
-  console.log(skills);
   return skills;
 }
 

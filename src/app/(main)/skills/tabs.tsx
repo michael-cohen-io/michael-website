@@ -10,7 +10,6 @@ import Tab from "@mui/material/Tab";
 const iconSize = "5em";
 
 function SkillItem({ skill }: { skill: any }) {
-  console.log(skill);
   return (
     <div>
       <Card>
@@ -70,12 +69,9 @@ function SkillsTabs({ skillsdivlection }: { skillsdivlection: any }) {
     },
     {},
   );
-  //   console.log(skillsObj);
   const allSkills = Object.keys(skillsObj).flatMap((key) => skillsObj[key]);
-  console.log(allSkills);
   const skillsLabels = Object.keys(skillsObj);
   const skillTabItems = (section: [any]) => {
-    console.log(section);
     return section.map((index) => (
       <SkillItem skill={section[index]} key={index} />
     ));
