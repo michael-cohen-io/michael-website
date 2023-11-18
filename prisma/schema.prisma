@@ -28,3 +28,19 @@ model Company {
   workEntries WorkEntry[]
   createdAt   DateTime    @default(now())
 }
+
+model Skill {
+  id          Int         @id @default(autoincrement())
+  name        String      
+  section     SkillSection @relation(fields: [sectionId], references: [id])
+  sectionId   Int
+  createdAt   DateTime    @default(now())
+  description String
+  iconColor   String
+  logo        String
+}
+model SkillSection {
+  id          Int         @id @default(autoincrement())
+  name        String      @unique
+  skills      Skill[]
+}

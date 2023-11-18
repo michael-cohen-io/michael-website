@@ -44,9 +44,6 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
-  react-vertical-timeline-component:
-    specifier: ^3.6.0
-    version: 3.6.0(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -73,6 +70,9 @@ devDependencies:
   prettier:
     specifier: 3.1.0
     version: 3.1.0
+  react-vertical-timeline-component:
+    specifier: ^3.6.0
+    version: 3.6.0(react@18.2.0)
   tailwindcss:
     specifier: ^3.3.0
     version: 3.3.5
@@ -1150,7 +1150,6 @@ packages:
 
   /classnames@2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
 
   /client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
@@ -2739,7 +2738,7 @@ packages:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
     dependencies:
       react: 18.2.0
-    dev: false
+    dev: true
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -2771,14 +2770,13 @@ packages:
       react-intersection-observer: 8.34.0(react@18.2.0)
     transitivePeerDependencies:
       - react
-    dev: false
+    dev: true
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
