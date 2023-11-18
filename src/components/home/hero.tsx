@@ -25,7 +25,7 @@ export default function Hero() {
             onTypingDone={onTypingDone}
             avgTypingDelay={35}
           >
-            <h1 className="text-left font-light text-6xl text-slate-500">
+            <h1 className="text-left font-bold text-6xl text-slate-500">
               hello, world.
             </h1>
             <Typist.Delay ms={500} />
