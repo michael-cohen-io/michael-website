@@ -66,7 +66,7 @@ export default function Hero() {
           bottom={false}
           duration={1500}
           distance="30px"
-          when={typeCounter > 3}
+          when={typeCounter > 2}
         >
           <Image
             src="/profile.jpg"
