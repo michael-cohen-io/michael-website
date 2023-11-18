@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
+import React from "react";
 
-import React from 'react';
-
-const OpenSea = ({ className }) => {
+export default function OpenSea({ className }: { className: any }) {
   return (
     <svg
       className={className}
@@ -56,6 +54,4 @@ const OpenSea = ({ className }) => {
       />
     </svg>
   );
-};
-
-export default OpenSea;
+}
