@@ -39,8 +39,6 @@ body {
 }
 
 .work-item {
-  background: var(--accent-color) !important;
-
   .date {
     color: var(--foreground-rgb) !important;
   }

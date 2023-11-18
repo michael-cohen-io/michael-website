@@ -32,7 +32,7 @@ function WorkItem({ workItem }: any) {
         background: backgroundColor,
       }}
       contentArrowStyle={{
-        borderRight: "7px solid #3b82f6",
+        borderRight: `7px solid ${backgroundColor}`,
       }}
       date={dateStr}
       dateClassName="date"
