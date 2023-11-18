@@ -1,7 +1,6 @@
 "use client";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
-import { useRouter } from "next/navigation";
 
 function WorkDetailsModal({ workItem }: any) {
   return (

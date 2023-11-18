@@ -26,7 +26,7 @@ function WorkItem({ workItem }: any) {
   }`;
   return (
     <VerticalTimelineElement
-      className="vertical-timeline-element--work"
+      className="vertical-timeline-element--work cursor-pointer"
       textClassName="work-item"
       contentStyle={{
         boxShadow: "0 0 0 0",
