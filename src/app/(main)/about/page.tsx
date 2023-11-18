@@ -41,10 +41,15 @@ export default function About() {
             </p>
             <br />
             <p className="font-light">
+              <Link href="/work" className="cta-btn cta-btn--standard">
+                read about my work experience
+              </Link>
+            </p>
+            <p className="mt-4 font-light">
               are you more oldschool? read on at
               <Link
                 href="/MichaelCohenResume.pdf"
-                className="mt-2 text-accent-color cta-btn cta-btn--resume"
+                className="mt-2 cta-btn cta-btn--inverted"
               >
                 {" "}
                 my_resume_final_final_copy_NEW.pdf

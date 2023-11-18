@@ -8,6 +8,7 @@
   --background-start-rgb: 203, 213, 225;
   --background-end-rgb: 248, 250, 252;
   --accent-color: #3b82f6;
+  --accent-color-transparent: 59, 130, 246, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +31,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Work Section Timeline */
 .vertical-timeline-element-icon {
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -39,6 +42,7 @@ body {
   color: var(--foreground-rgb) !important;
 }
 
+/* Timeline Item */
 .work-item {
   .date {
     color: var(--foreground-rgb) !important;
@@ -78,8 +82,25 @@ body {
   }
 }
 
-/* Resume Style */
-.cta-btn--resume {
+.cta-btn--standard {
+  color: rgb(var(--secondary-rgb));
+  border: 2px solid var(--accent-color);
+
+  &::after {
+    background: var(--accent-color);
+    width: 100%;
+  }
+
+  &:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+    &::after {
+      width: 0;
+    }
+  }
+}
+
+.cta-btn--inverted {
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
 

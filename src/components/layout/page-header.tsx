@@ -12,7 +12,7 @@ export default function PageHeader({
   return title ? (
     <>
       <div
-        className={`mx-5 flex max-w-screen-xl items-center justify-between w-full mt-20 ${
+        className={`mx-5 flex max-w-screen-xl items-center justify-between w-full mt-8 ${
           hidden ? "invisible" : ""
         }`}
       >
