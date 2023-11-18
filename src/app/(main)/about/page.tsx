@@ -16,16 +16,18 @@ export default function About() {
           <br />
           <p className="font-light">
             Our team is dedicated to furnishing top-tier tools tailored for
-            creators, all available conveniently and safely within OpenSea's
-            Creator Studio. We aim to be the most trusted and versatile tool for
-            any crypto-curious creators who are looking to enter the world of
-            web3 without needing to know its highly technical details.
+            creators, all available conveniently and safely within
+            OpenSea&apos;s Creator Studio. We aim to be the most trusted and
+            versatile tool for any crypto-curious creators who are looking to
+            enter the world of web3 without needing to know its highly technical
+            details.
           </p>
           <br />
           <p className="font-light">
             Outside of my current role, I am a lifelong learner with an interest
-            in building interesting and useful things. I'm a huge music & movie
-            fan, a regular at any and all NYC shows, and a novice snowboarder.
+            in building interesting and useful things. I&apos;m a huge music &
+            movie fan, a regular at any and all NYC shows, and a novice
+            snowboarder.
           </p>
           <br />
           <p className="font-light">
