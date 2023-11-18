@@ -18,7 +18,8 @@ function WorkItem({ workItem }: any) {
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
-    color: "#333333",
+    borderColor: backgroundColor,
+    color: backgroundColor,
   };
   const dateStr = `${formatProjectDate(workItem.startDate)} - ${
     workItem.endDate ? formatProjectDate(workItem.endDate) : "Present"

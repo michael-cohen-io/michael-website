@@ -31,10 +31,10 @@ export default function About() {
           </p>
           <br />
           <p className="font-light">
-            are you more oldschool? read on at{" "}
+            are you more oldschool? read on at
             <Link
               href="/MichaelCohenResume.pdf"
-              className="text-accent-color hover:underline"
+              className="mt-2 text-accent-color cta-btn cta-btn--resume"
             >
               {" "}
               my_resume_final_final_copy_NEW.pdf
