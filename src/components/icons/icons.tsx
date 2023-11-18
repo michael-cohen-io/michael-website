@@ -1,5 +1,5 @@
 import React from "react";
-// import IconResearchAudience from "@rhiza/nielsen-icons/react-icons/research-audience";
+import IconResearchAudience from "@rhiza/nielsen-icons/react-icons/research-audience";
 import {
   FaAmazon,
   FaAws,
@@ -10,7 +10,7 @@ import {
   FaDatabase,
   FaEthereum,
 } from "@meronex/icons/fa";
-// import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
+import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
 import {
   SiFlutter,
   SiAndroid,
@@ -23,7 +23,7 @@ import {
   SiTypescript,
 } from "@meronex/icons/si";
 import { GrStackOverflow } from "@meronex/icons/gr";
-// import MdcFileDocumentOutline from "@meronex/icons/mdc/MdcFileDocumentOutline";
+import MdcFileDocumentOutline from "@meronex/icons/mdc/MdcFileDocumentOutline";
 import { CgWebsite } from "@meronex/icons/cg";
 import { Watson } from "@carbon/icons-react";
 import UFIcon from "./UFIcon";
@@ -67,8 +67,8 @@ export default function IconByName({
   color?: string;
 }) {
   switch (iconName.toUpperCase()) {
-    // case IconName.NIELSEN:
-    //   return <IconResearchAudience accent="#262626" base="#262626" />;
+    case IconName.NIELSEN:
+      return <IconResearchAudience accent="#262626" base="#262626" />;
     case IconName.AMAZON:
       return <FaAmazon size={size} color={color} />;
     case IconName.AWS:
@@ -91,12 +91,12 @@ export default function IconByName({
       return <SiRedux size={size} color={color} />;
     case IconName.SHOPIFY:
       return <SiShopify size={size} color={color} />;
-    // case IconName.NOSQL:
-    //   return <MdcFileDocumentOutline size={size} color={color} />;
+    case IconName.NOSQL:
+      return <MdcFileDocumentOutline size={size} color={color} />;
     case IconName.JAVA:
       return <FaJava size={size} color={color} />;
-    // case IconName.CATAN:
-    //   return <MdcHexagonSlice6 size={size} color={color} />;
+    case IconName.CATAN:
+      return <MdcHexagonSlice6 size={size} color={color} />;
     case IconName.UF:
       return <UFIcon />;
     case IconName.OPENSEA:
