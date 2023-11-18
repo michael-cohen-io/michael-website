@@ -2,16 +2,23 @@
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogContent from "@mui/material/DialogContent";
+import CardContent from "@mui/material/CardContent";
 import { formatDate } from "@/lib/utils";
 
-const TextWithLineBreaks = ({ text }: { text: string }) => {
+const TextWithLineBreaks = ({
+  text,
+  textStyle,
+}: {
+  text: string;
+  textStyle: string;
+}) => {
   const lines = text.split("\\n");
 
   return (
     <>
       {lines.map((line, index) => (
         <>
-          <p key={index} className="font-light text-xl whitespace-pre-line">
+          <p key={index} className={`${textStyle} whitespace-pre-line`}>
             {line}
           </p>
           <br />
@@ -37,7 +44,10 @@ function WorkDetailsModal({ workItem }: any) {
           </DialogContentText>
         </div>
         <DialogContentText align="left">
-          <TextWithLineBreaks text={workItem.description} />
+          <TextWithLineBreaks
+            text={workItem.description}
+            textStyle="font-light text-xl"
+          />
         </DialogContentText>
       </DialogContent>
     </div>
@@ -46,19 +56,21 @@ function WorkDetailsModal({ workItem }: any) {
 
 function WorkDetailsCard({ workItem }: any) {
   return (
-    <>
-      <div className="flex flex-col justify-center">
-        <div className="mr-auto">
-          <h2 className="text-xl">{workItem.company.name}</h2>
-          <h5 className="text-base">{workItem.role}</h5>
-        </div>
-        <div>
-          <p className="text-sm">
+    <div className="flex flex-col w-full max-w-xl">
+      <CardContent>
+        <h3 className="font-light text-2xl">{workItem.company.name}</h3>
+        <div className="flex mb-4 items-center justify-between w-full">
+          <h4 className="font-light text-lg">{workItem.role}</h4>
+          <h5 className="font-light text-xl">
             {formatDate(workItem.startDate)} - {formatDate(workItem.endDate)}
-          </p>
+          </h5>
         </div>
-      </div>
-    </>
+        <TextWithLineBreaks
+          text={workItem.description}
+          textStyle="font-extralight text-sm"
+        />
+      </CardContent>
+    </div>
   );
 }
 

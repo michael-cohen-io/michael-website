@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Layout(props: {
@@ -6,7 +7,14 @@ export default function Layout(props: {
 }) {
   return (
     <>
-      {props.children}
+      <div>
+        <Link href="/work">
+          <p>{"<-"}</p>
+        </Link>
+      </div>
+      <div className="mx-5 flex max-w-screen-xl items-center justify-center w-full my-4">
+        {props.children}
+      </div>
       {props.modal}
     </>
   );

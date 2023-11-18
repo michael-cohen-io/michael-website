@@ -26,6 +26,7 @@ function WorkItem({ workItem }: any) {
       className="vertical-timeline-element--work cursor-pointer font-light"
       textClassName="work-item"
       contentStyle={{
+        // TODO: change based on light dark mode
         boxShadow: "none",
         background: backgroundColor,
         color: "#fff",

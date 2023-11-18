@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 import WorkDetails from "@/components/modal/work-detail";
+import Card from "@mui/material/Card";
 
 async function fetchWorkItem(id: number) {
   const workItem = await prisma.workEntry.findUnique({
@@ -37,8 +38,8 @@ export default async function WorkItemPage({
   }
 
   return (
-    <>
+    <Card>
       <WorkDetails workItem={response} />
-    </>
+    </Card>
   );
 }
