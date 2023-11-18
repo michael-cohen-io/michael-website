@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import IconResearchAudience from "@rhiza/nielsen-icons/react-icons/research-audience";
 import {
   FaAmazon,
