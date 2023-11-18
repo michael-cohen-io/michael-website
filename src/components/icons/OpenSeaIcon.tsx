@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OpenSea({ className }: { className: any }) {
+export default function OpenSea({ className }: { className?: any }) {
   return (
     <svg
       className={className}

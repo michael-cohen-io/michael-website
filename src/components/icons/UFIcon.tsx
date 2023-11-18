@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UFIcon({ className }: { className: any }) {
+export default function UFIcon({ className }: { className?: any }) {
   return (
     <svg
       className={className}

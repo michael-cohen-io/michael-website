@@ -98,11 +98,11 @@ export default function IconByName({
     // case IconName.CATAN:
     //   return <MdcHexagonSlice6 size={size} color={color} />;
     case IconName.UF:
-      return <UFIcon size={size} color={color} />;
+      return <UFIcon />;
     case IconName.OPENSEA:
-      return <OpenSeaIcon size={size} color={color} />;
+      return <OpenSeaIcon />;
     case IconName.FS:
-      return <GrStackOverflow size={size} color={color} />;
+      return <GrStackOverflow />;
     case IconName.WEBDEV:
       return <CgWebsite size={size} color={color} />;
     case IconName.SWIFT:
