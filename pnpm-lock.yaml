@@ -44,6 +44,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-typist:
+    specifier: ^2.0.5
+    version: 2.0.5(react-dom@18.2.0)(react@18.2.0)
   react-vertical-timeline-component:
     specifier: ^3.6.0
     version: 3.6.0(react@18.2.0)
@@ -58,6 +61,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.2.15
     version: 18.2.15
+  '@types/react-typist':
+    specifier: ^2.0.6
+    version: 2.0.6
   '@types/react-vertical-timeline-component':
     specifier: ^3.3.6
     version: 3.3.6
@@ -761,6 +767,12 @@ packages:
     dependencies:
       '@types/react': 18.2.37
     dev: false
+
+  /@types/react-typist@2.0.6:
+    resolution: {integrity: sha512-/7tmwNwKLOAdL1kx0y7yel4DqOvdQSk13MlCnBX8GyLoYicrU7t8rPOzu2soFTzq0c6QAeX6uSqTRX3tdya7rg==}
+    dependencies:
+      '@types/react': 18.2.37
+    dev: true
 
   /@types/react-vertical-timeline-component@3.3.6:
     resolution: {integrity: sha512-OUvyPXRjXvUD/SNLO0CW0GbIxVF32Ios5qHecMSfw6kxnK1cPULD9NV80EuqZ3WmS/s6BgbcwmN8k4ISb3akhQ==}
@@ -2766,6 +2778,17 @@ packages:
       '@babel/runtime': 7.23.2
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-typist@2.0.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-iZCkeqeegO0TlkTMiH2JD1tvMtY9RrXkRylnAI6m8aCVAUUwNzoWTVF7CKLij6THeOMcUDCznLDDvNp55s+YZA==}
+    peerDependencies:
+      react: ^0.14 || ^15.0 || ^16.0
+      react-dom: ^^0.14 || ^15.0 || ^16.0
+    dependencies:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
