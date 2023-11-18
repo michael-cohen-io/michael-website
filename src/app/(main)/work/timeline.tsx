@@ -11,6 +11,9 @@ function WorkItem({ workItem }: any) {
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       textClassName="work-item"
+      contentStyle={{
+        boxShadow: "0 0 0 0",
+      }}
       contentArrowStyle={{
         borderRight: "7px solid #3b82f6",
       }}
@@ -20,11 +23,9 @@ function WorkItem({ workItem }: any) {
       visible={true}
     >
       <h2 className="vertical-timeline-element-title">
-        {workItem.team} | {workItem.role}
+        {workItem.company.name} | {workItem.role}
       </h2>
-      <h3 className="vertical-timeline-element-subtitle">
-        {workItem.company.name}
-      </h3>
+      <h3 className="vertical-timeline-element-subtitle">{workItem.team}</h3>
     </VerticalTimelineElement>
   );
 }

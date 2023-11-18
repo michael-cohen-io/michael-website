@@ -31,11 +31,16 @@ body {
   color: var(--foreground-rgb) !important;
 }
 
+.vertical-timeline-element-content {
+  box-shadow: 0 !important;
+  -webkit-box-shadow: 0 !important;
+}
+
 .work-item {
   background: var(--accent-color) !important;
 
   .date {
-    color: var(--accent-color) !important;
+    color: var(--foreground-rgb) !important;
   }
 
   .icon {

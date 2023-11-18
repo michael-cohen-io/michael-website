@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import Nav from "@/components/layout/nav";
 import cx from "classnames";
 import Footer from "@/components/layout/footer";
 
-const robotoThin = Roboto({ weight: "100", subsets: ["latin"] });
-const robotoNormal = Roboto({ weight: "300", subsets: ["latin"] });
+const robotoThin = Roboto_Mono({ weight: "100", subsets: ["latin"] });
+const robotoNormal = Roboto_Mono({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "<MC>",
