@@ -127,5 +127,6 @@ body {
 }
 
 .DialogContent {
+  font-family: var(--font-roboto);
   overflow-y: auto;
 }

@@ -5,6 +5,9 @@ import React from "react";
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
+import { Flex, Text } from "@radix-ui/themes";
+
+import Heading from "../typography/heading";
 
 const TextWithLineBreaks = ({
   text,
@@ -19,9 +22,9 @@ const TextWithLineBreaks = ({
     <>
       {lines.map((line, index) => (
         <>
-          <p key={index} className={`${textStyle} whitespace-pre-line`}>
+          <Text key={index} className={`${textStyle}`}>
             {line}
-          </p>
+          </Text>
           <br />
         </>
       ))}
@@ -50,21 +53,21 @@ export default function WorkDialog({
         <Dialog.Overlay className="DialogOverlay">
           <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg pt-4 px-4 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
             <Dialog.Title className="text-mauve12 m-0">
-              <div className="flex flex-col">
-                <h2 className="font-light text-xl">{workItem.company.name}</h2>
-                <div className="flex mb-4 items-center justify-between w-full">
-                  <h4 className="font-light text-md">{workItem.role}</h4>
-                  <h5 className="font-light text-sm">
+              <Flex direction="column">
+                <Heading size="4">{workItem.company.name}</Heading>
+                <Flex className="flex mb-4 items-center justify-between w-full">
+                  <Heading size="3">{workItem.role}</Heading>
+                  <Heading size="2">
                     {formatDate(workItem.startDate)} -{" "}
                     {formatDate(workItem.endDate)}
-                  </h5>
-                </div>
-              </div>
+                  </Heading>
+                </Flex>
+              </Flex>
             </Dialog.Title>
             <Dialog.Description className="text-mauve11 mt-[10px] mb-5 leading-normal">
               <TextWithLineBreaks
                 text={workItem.description}
-                textStyle="font-extralight text-sm"
+                textStyle="text-sm"
               />
             </Dialog.Description>
           </Dialog.Content>

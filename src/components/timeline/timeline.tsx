@@ -1,12 +1,14 @@
 "use client";
 
-import IconByName from "@/components/icons/icons";
-import WorkDialog from "@/components/dialog/work-dialog";
+import "react-vertical-timeline-component/style.min.css";
+
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+
+import WorkDialog from "@/components/dialog/work-dialog";
+import IconByName from "@/components/icons/icons";
 import { formatDate } from "@/lib/utils";
 
 function WorkItem({ workItem }: any) {
