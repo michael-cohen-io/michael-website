@@ -5,7 +5,7 @@ import React from "react";
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Flex, Strong, Text } from "@radix-ui/themes";
+import { Flex, Inset, Separator, Strong, Text } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
 
@@ -46,8 +46,13 @@ export default function WorkDialog({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay">
-          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] pt-6 px-8 focus:outline-none">
-            <Dialog.Title className="text-mauve12 m-0">
+          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
+            <Dialog.Title
+              style={{
+                backgroundColor: workItem.iconColor || "",
+              }}
+              className={`text-slate-50 pt-6 px-8`}
+            >
               <Flex direction="column">
                 <Heading size="4" as="h1">
                   {workItem.company.name}
@@ -63,7 +68,8 @@ export default function WorkDialog({
                 </Flex>
               </Flex>
             </Dialog.Title>
-            <Dialog.Description className="text-mauve11 mt-[10px] mb-5 leading-normal">
+            <Separator my="1" size="4" />
+            <Dialog.Description className="text-mauve11 mt-[10px] mx-8 mb-5 leading-normal">
               <TextWithLineBreaks text={workItem.description} />
             </Dialog.Description>
           </Dialog.Content>
