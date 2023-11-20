@@ -19,13 +19,8 @@ body {
   color: var(--foreground-rgb) !important;
 }
 
-.vertical-timeline-element--work {
-  border-radius: max(var(--radius-2), var(--radius-full));
-}
-
 /* Timeline Item */
 .work-item {
-  border-radius: max(var(--radius-2), var(--radius-full));
   .date {
     color: var(--foreground-rgb) !important;
   }
@@ -115,7 +110,7 @@ body {
   font-family: var(--font-roboto);
   overflow-y: auto;
   font-weight: 300 !important;
-  border-radius: max(var(--radius-2), var(--radius-full));
+  border-radius: 1rem;
 
   p {
     font-size: 0.875rem;

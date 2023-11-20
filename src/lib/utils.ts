@@ -9,6 +9,10 @@ export function formatDate(date?: Date | null) {
     : "Present";
 }
 
+export function shortRole(role: string) {
+  return role.replace("Senior", "Sr.").trim();
+}
+
 export function isDev(): boolean {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "development";
 }

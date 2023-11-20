@@ -27,11 +27,10 @@ function WorkItem({ workItem }: any) {
       className="vertical-timeline-element--work cursor-pointer font-light"
       textClassName="work-item"
       contentStyle={{
-        // TODO: change based on light dark mode
         boxShadow: "none",
         background: backgroundColor,
         color: "#fff",
-        borderRadius: "1.0rem",
+        borderRadius: "var(--radius-3)",
       }}
       contentArrowStyle={{
         borderRight: `7px solid ${backgroundColor}`,

@@ -3,9 +3,9 @@
 import React from "react";
 
 import { WorkWithCompany } from "@/lib/prisma";
-import { formatDate } from "@/lib/utils";
+import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Flex, Text } from "@radix-ui/themes";
+import { Flex, Strong, Text } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
 
@@ -35,17 +35,18 @@ export default function WorkDialog({
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <div>
-          <h2 className="vertical-timeline-element-title">
-            {workItem.company.name} | {workItem.role}
-          </h2>
-          <h3 className="vertical-timeline-element-subtitle">
+          <Heading className="vertical-timeline-element-title" size="4">
+            <Strong>{workItem.company.name}</Strong> |{" "}
+            {shortRole(workItem.role)}
+          </Heading>
+          <Heading className="vertical-timeline-element-subtitle" size="3">
             {workItem.team}
-          </h3>
+          </Heading>
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay">
-          <Dialog.Content className="DialogContent rounded-6 bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg pt-4 px-4 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] pt-4 px-4 focus:outline-none">
             <Dialog.Title className="text-mauve12 m-0">
               <Flex direction="column">
                 <Heading size="4" as="h1">
