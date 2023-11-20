@@ -11,8 +11,7 @@ export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
   return (
     <>
-      {/* TODO: */}
-      <Flex className="max-w-screen-xl items-start justify-between w-full">
+      <Flex align="start" justify="between" className="max-w-screen-xl w-full">
         <Fade
           top
           duration={1000}

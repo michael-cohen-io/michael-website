@@ -27,6 +27,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
 export default function Nav() {
   const scrolled = useScroll(50);
   const { theme, setTheme } = useTheme();
+  const showButton = isDev();
 
   return (
     <>
@@ -58,7 +59,7 @@ export default function Nav() {
             <NavLink href="/projects" title="projects" />
             <NavLink href="/gallery" title="gallery" />
             <NavLink href="/contact" title="contact" />
-            {isDev() && (
+            {showButton && (
               <Button
                 variant="surface"
                 onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
