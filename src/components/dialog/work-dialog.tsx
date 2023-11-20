@@ -61,7 +61,7 @@ export default function WorkDialog({
                 </div>
               </div>
             </Dialog.Title>
-            <Dialog.Description className="text-mauve11 mt-[10px] mb-5 text-[15px] leading-normal">
+            <Dialog.Description className="text-mauve11 mt-[10px] mb-5 leading-normal">
               <TextWithLineBreaks
                 text={workItem.description}
                 textStyle="font-extralight text-sm"

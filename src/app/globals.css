@@ -83,13 +83,13 @@ body {
   color: rgb(var(--gray-12));
 
   &::after {
-    background: var(--accent-9);
+    background: var(--accent-a11);
     width: 100%;
     border-radius: max(var(--radius-2), var(--radius-full));
   }
 
   &:hover {
-    color: var(--accent-9);
+    color: var(--accent-a11);
     &::after {
       width: 0;
       border-radius: max(var(--radius-2), var(--radius-full));
@@ -98,10 +98,10 @@ body {
 }
 
 .cta-btn--inverted {
-  color: var(--accent-9);
+  color: var(--accent-a11);
 
   &::after {
-    background: var(--accent-9);
+    background: var(--accent-a11);
     border-radius: max(var(--radius-2), var(--radius-full));
   }
 

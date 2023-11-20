@@ -7,7 +7,7 @@ import React, { Suspense } from "react";
 
 import Footer from "@/components/layout/footer";
 import Nav from "@/components/layout/nav";
-import { Theme } from "@radix-ui/themes";
+import { Container, Theme } from "@radix-ui/themes";
 
 import { Providers } from "./providers";
 
@@ -44,8 +44,12 @@ export default function RootLayout({
             >
               <Nav />
             </Suspense>
-            <main>{children}</main>
-            <Footer />
+            <main>
+              <Container mt="9" className="min-h-screen">
+                {children}
+              </Container>
+              <Footer />
+            </main>
           </Theme>
         </Providers>
       </body>

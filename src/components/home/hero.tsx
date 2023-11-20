@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import PageHeader from "../layout/page-header";
 import { useState } from "react";
-import Typist from "react-typist";
 import Fade from "react-reveal/Fade";
+import Typist from "react-typist";
+
+import { Code } from "@radix-ui/themes";
+
+import PageHeader from "../layout/page-header";
+import Heading from "../typography/heading";
 
 export default function Hero() {
   const [typeCounter, setTypeCounter] = useState(0);
@@ -25,9 +29,9 @@ export default function Hero() {
             onTypingDone={onTypingDone}
             avgTypingDelay={35}
           >
-            <h1 className="text-left font-bold text-6xl text-slate-500">
+            <Code weight="bold" size="9">
               hello, world.
-            </h1>
+            </Code>
             <Typist.Delay ms={500} />
           </Typist>
           {typeCounter > 0 && (
@@ -37,13 +41,13 @@ export default function Hero() {
               onTypingDone={onTypingDone}
               avgTypingDelay={35}
             >
-              <h2 className="text-left font-thin text-4xl">
+              <Heading className="text-left font-thin text-4xl">
                 My name is{" "}
                 <Link href="/about" className="font-bold text-accent-color">
                   Michael Cohen
                 </Link>
                 .
-              </h2>
+              </Heading>
               <Typist.Delay ms={500} />
             </Typist>
           )}
@@ -54,9 +58,9 @@ export default function Hero() {
               onTypingDone={onTypingDone}
               avgTypingDelay={35}
             >
-              <h2 className="text-left font-thin text-4xl">
+              <Heading className="text-left font-thin text-4xl">
                 I&apos;m a software engineer.
-              </h2>
+              </Heading>
               <Typist.Delay ms={500} />
             </Typist>
           )}
@@ -73,7 +77,7 @@ export default function Hero() {
             alt="Michael Profile image"
             width="400"
             height="400"
-            className="grayscale mr-2 rounded-3xl hover:grayscale-0 drop-shadow-2xl"
+            className="grayscale mr-2 rounded-6 hover:grayscale-0 drop-shadow-2xl"
           />
         </Fade>
       </div>
