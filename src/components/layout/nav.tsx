@@ -16,12 +16,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
   return (
     <Button variant="ghost" radius="medium">
       <Link href={href} className={`link ${isActive ? "active" : ""}`}>
-        <Heading
-          size="3"
-          align="center"
-          color={isActive ? "blue" : "gray"}
-          // className="mr-5"
-        >
+        <Heading size="3" align="center" color={isActive ? "blue" : "gray"}>
           {title}
         </Heading>
       </Link>
@@ -38,11 +33,18 @@ export default function Nav() {
       <div
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
+            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl w-[85vw]"
             : "bg-white/0"
         } z-30 transition-all`}
       >
-        <Flex height="max-content" width="100%" px="9" py="4" justify="between">
+        <Flex
+          height="max-content"
+          width="100%"
+          mx="9"
+          px="6"
+          py="4"
+          justify="between"
+        >
           <Link href="/" className="flex items-center font-light text-3xl">
             <Heading color="blue" size="7">
               {"<MC>"}

@@ -6,12 +6,13 @@ import { useState } from "react";
 import Fade from "react-reveal/Fade";
 import Typist from "react-typist";
 
-import { Code } from "@radix-ui/themes";
+import { isDev } from "@/lib/utils";
+import { Code, Flex, Grid } from "@radix-ui/themes";
 
 import PageHeader from "../layout/page-header";
 import Heading from "../typography/heading";
 
-export default function Hero() {
+function TypingHero() {
   const [typeCounter, setTypeCounter] = useState(0);
 
   const onTypingDone = () => {
@@ -83,4 +84,45 @@ export default function Hero() {
       </div>
     </>
   );
+}
+
+function StaticHero() {
+  return (
+    <>
+      <PageHeader title="Hero" />
+      <Grid columns="2" width="100%" justify="between" mt="6">
+        <Flex direction="column" justify="start" width="max-content">
+          <Code weight="bold" variant="soft" size="9">
+            hello, world.
+          </Code>
+          <Heading className="text-left font-thin text-4xl ml-4">
+            My name is{" "}
+            <Link href="/about" className="font-bold text-accent-color">
+              Michael Cohen
+            </Link>
+            .
+          </Heading>
+          <Heading className="text-left font-thin text-4xl ml-4">
+            I&apos;m a software engineer.
+          </Heading>
+          <Typist.Delay ms={500} />
+        </Flex>
+        <Flex justify="end">
+          <Fade right={true} bottom={false} duration={1500} distance="30px">
+            <Image
+              src="/profile.jpg"
+              alt="Michael Profile image"
+              width="400"
+              height="400"
+              className="grayscale mr-2 rounded-6 hover:grayscale-0 drop-shadow-2xl align-bottom"
+            />
+          </Fade>
+        </Flex>
+      </Grid>
+    </>
+  );
+}
+
+export default function Hero() {
+  return isDev() ? <StaticHero /> : <TypingHero />;
 }

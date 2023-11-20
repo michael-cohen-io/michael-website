@@ -1,6 +1,9 @@
 "use client";
 
 import { capitalize } from "@/lib/utils";
+import { Flex } from "@radix-ui/themes";
+
+import Heading from "../typography/heading";
 
 export default function PageHeader({
   title,
@@ -11,17 +14,13 @@ export default function PageHeader({
 }) {
   return title ? (
     <>
-      <div
-        className={`mx-5 flex max-w-screen-xl items-center justify-between w-full mt-8 ${
-          hidden ? "invisible" : ""
-        }`}
-      >
+      <Flex mt="8" className={`${hidden ? "invisible" : ""}`}>
         <div className={`w-full px-1 xl:px-0 ${hidden ? "invisible" : ""}`}>
-          <h1 className="text-center font-light text-2xl">
+          <Heading className="text-center font-light text-2xl">
             {capitalize(title)}
-          </h1>
+          </Heading>
         </div>
-      </div>
+      </Flex>
     </>
   ) : null;
 }
