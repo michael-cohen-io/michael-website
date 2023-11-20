@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="mt-8 flex max-w-screen-xl items-start justify-between w-full">
         <div className="z-10 w-full max-w-xl px-1 xl:px-0">
           <Typist
-            // cursor={{ hideWhenDone: true, show: false }}
+            cursor={{ hideWhenDone: true, show: false }}
             key={1}
             onTypingDone={onTypingDone}
             avgTypingDelay={35}
