@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import * as Dialog from "@radix-ui/react-dialog";
+
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
+import * as Dialog from "@radix-ui/react-dialog";
 
 const TextWithLineBreaks = ({
   text,

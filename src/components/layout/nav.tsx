@@ -1,8 +1,12 @@
 "use client";
 
-import useScroll from "@/lib/hooks/use-scroll";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import useScroll from "@/lib/hooks/use-scroll";
+import { isDev } from "@/lib/utils";
+import { Button } from "@radix-ui/themes";
 
 function NavLink({ href, title }: { href: string; title: string }) {
   const pathname = usePathname();
@@ -22,6 +26,8 @@ function NavLink({ href, title }: { href: string; title: string }) {
 
 export default function Nav() {
   const scrolled = useScroll(50);
+  const { theme, setTheme } = useTheme();
+
   return (
     <>
       <div
@@ -44,6 +50,14 @@ export default function Nav() {
             <NavLink href="/projects" title="projects" />
             <NavLink href="/gallery" title="gallery" />
             <NavLink href="/contact" title="contact" />
+            {isDev() && (
+              <Button
+                variant="surface"
+                onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
+              >
+                {theme}
+              </Button>
+            )}
           </div>
         </div>
       </div>

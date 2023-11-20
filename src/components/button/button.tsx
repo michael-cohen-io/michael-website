@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+
 interface ButtonProps {
   buttonStyle: "standard" | "inverted";
   children: React.ReactNode;

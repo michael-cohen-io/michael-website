@@ -1,4 +1,5 @@
 const { violet, blackA, mauve, green } = require("@radix-ui/colors");
+import { radixThemePreset } from "radix-themes-tw";
 
 import type { Config } from "tailwindcss";
 
@@ -72,5 +73,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  presets: [radixThemePreset],
 };
 export default config;

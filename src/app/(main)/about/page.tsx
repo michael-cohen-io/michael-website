@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Fade from "react-reveal/Fade";
 import { useState } from "react";
+import Fade from "react-reveal/Fade";
+
 import { InvertedButton, StandardButton } from "@/components/button/button";
 
 export default function About() {

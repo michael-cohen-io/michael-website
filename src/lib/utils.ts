@@ -8,3 +8,7 @@ export function formatDate(date?: Date | null) {
     ? date.toLocaleString("en-US", { month: "short", year: "numeric" })
     : "Present";
 }
+
+export function isDev(): boolean {
+  return process.env.NEXT_PUBLIC_VERCEL_ENV === "development";
+}

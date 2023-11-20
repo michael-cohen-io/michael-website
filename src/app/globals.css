@@ -1,8 +1,10 @@
+@import "@radix-ui/colors/blue.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --secondary-rgb: 255, 255, 255;
   --background-start-rgb: 203, 213, 225;
@@ -22,18 +24,11 @@
     --background-start-rgb: 2, 6, 23;
     --background-end-rgb: 30, 41, 59;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
   overflow: auto !important;
   padding: 0 !important;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 /* Work Section Timeline */
@@ -86,16 +81,16 @@ body {
 }
 
 .cta-btn--standard {
-  color: rgb(var(--white-rgb));
-  border: 2px solid var(--accent-color);
+  color: rgb(var(--white-1));
+  border: 2px solid var(--blue-12);
 
   &::after {
-    background: var(--accent-color);
+    background: var(--blue-12);
     width: 100%;
   }
 
   &:hover {
-    color: var(--accent-color);
+    color: var(--white-1);
     text-decoration: none;
     &::after {
       width: 0;
