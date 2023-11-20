@@ -46,7 +46,7 @@ function WorkDetailsModal({ workItem }: any) {
         <DialogContentText align="left">
           <TextWithLineBreaks
             text={workItem.description}
-            textStyle="font-light text-xl"
+            textStyle="font-extralight text-sm"
           />
         </DialogContentText>
       </DialogContent>
