@@ -32,10 +32,14 @@ function SkillCard(item: SkillWithSection) {
       <HoverCard.Trigger>
         <Card
           size="1"
-          className="max-w-52 hover:shadow-3 cursor-pointer hover:text-accent-color"
+          className="hover:shadow-3 cursor-pointer"
           variant="classic"
           onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}
+          style={{
+            maxWidth: "24vw",
+            minWidth: "12vw",
+          }}
         >
           <Flex align="center" justify="center" direction="column">
             <Inset clip="padding-box" side="top" pb="current" pt="current">
@@ -45,7 +49,14 @@ function SkillCard(item: SkillWithSection) {
                 size="50"
               />
             </Inset>
-            <Text as="p" size="1" align="center">
+            <Text
+              as="p"
+              size="1"
+              align="center"
+              style={{
+                color: hovered ? item.iconColor : "",
+              }}
+            >
               {item.name}
             </Text>
           </Flex>
@@ -54,7 +65,13 @@ function SkillCard(item: SkillWithSection) {
       <HoverCard.Content>
         <Flex gap="4">
           <Box>
-            <Heading size="3" as="h3">
+            <Heading
+              size="3"
+              as="h3"
+              style={{
+                color: hovered ? item.iconColor : "",
+              }}
+            >
               {item.name}
             </Heading>
             <Text as="div" size="2" style={{ maxWidth: 300 }} mt="3">
@@ -76,7 +93,7 @@ function TabContent({
 }) {
   return (
     <RTabs.Content value={tabValue}>
-      <Grid columns="4" gap="4">
+      <Grid columns="4" gap="4" justify="between">
         {tabItems.map((item) => (
           <SkillCard key={item.id} {...item} />
         ))}
