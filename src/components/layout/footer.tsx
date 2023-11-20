@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="absolute w-full py-5 text-center dark:bg-slate-800 bg-slate-50">
+    <div className="absolute w-full py-5 text-center">
       <p className="text-gray-500">
         A website by{" "}
         <a
