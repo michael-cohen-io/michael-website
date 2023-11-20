@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import { useState } from "react";
+import { InvertedButton, StandardButton } from "@/components/button/button";
 
 export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
@@ -17,14 +17,14 @@ export default function About() {
           distance="30px"
           onReveal={() => setTextRevealed(true)}
         >
-          <div className="z-10 w-full max-w-lg px-1 xl:px-0">
-            <p className="font-light">
+          <div className="z-10 w-full max-w-lg px-1 xl:px-0 font-light text-sm">
+            <p>
               Greetings! I&apos;m a software developer based out of Brooklyn,
               NY. I currently work as the Engineering Manager for the Creator
               team at OpenSea.
             </p>
             <br />
-            <p className="font-light">
+            <p>
               Our team is dedicated to furnishing top-tier tools tailored for
               creators, all available conveniently and safely within
               OpenSea&apos;s Creator Studio. We aim to be the most trusted and
@@ -33,27 +33,21 @@ export default function About() {
               technical details.
             </p>
             <br />
-            <p className="font-light">
+            <p>
               Outside of my current role, I am a lifelong learner with an
               interest in building interesting and useful things. I&apos;m a
               huge music & movie fan, a regular at any and all NYC shows, and a
               novice snowboarder.
             </p>
             <br />
-            <p className="font-light">
-              <Link href="/work" className="cta-btn cta-btn--standard">
-                read about my work experience
-              </Link>
-            </p>
-            <p className="mt-4 font-light">
+            <StandardButton href="/work">
+              read about my work experience
+            </StandardButton>
+            <p className="mt-4">
               are you more oldschool? read on at
-              <Link
-                href="/MichaelCohenResume.pdf"
-                className="mt-2 cta-btn cta-btn--inverted"
-              >
-                {" "}
+              <InvertedButton href="/MichaelCohenResume.pdf" className="mt-2">
                 my_resume_final_final_copy_NEW.pdf
-              </Link>
+              </InvertedButton>
             </p>
           </div>
         </Fade>

@@ -7,8 +7,12 @@
   --secondary-rgb: 255, 255, 255;
   --background-start-rgb: 203, 213, 225;
   --background-end-rgb: 248, 250, 252;
+
   --accent-color: #3b82f6;
   --accent-color-transparent: 59, 130, 246, 0;
+
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,7 +87,7 @@ body {
 }
 
 .cta-btn--standard {
-  color: rgb(var(--secondary-rgb));
+  color: rgb(var(--white-rgb));
   border: 2px solid var(--accent-color);
 
   &::after {
@@ -109,7 +113,7 @@ body {
   }
 
   &:hover {
-    color: rgb(var(--secondary-rgb));
+    color: rgb(var(--white-rgb));
     text-decoration: none;
 
     &::after {
