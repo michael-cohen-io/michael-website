@@ -78,12 +78,12 @@ body {
   color: var(--white-a12);
 
   &::after {
-    background: var(--accent-a11);
+    background: var(--accent-a9);
     width: 100%;
   }
 
   &:hover {
-    color: var(--accent-a11);
+    color: var(--accent-a9);
     &::after {
       width: 0;
     }
@@ -91,10 +91,10 @@ body {
 }
 
 .cta-btn--inverted {
-  color: var(--accent-a11);
+  color: var(--accent-a9);
 
   &::after {
-    background: var(--accent-a11);
+    background: var(--accent-a9);
   }
 
   &:hover {

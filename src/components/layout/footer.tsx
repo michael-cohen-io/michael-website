@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="absolute w-full py-5 text-center">
       <Text className="text-gray-500" weight="light">
-        A website by{" "}
+        Built with 🤍 by{" "}
         <Strong className="text-accent-color underline-offset-4 transition-colors hover:underline">
           <Link
             href="https://twitter.com/pwincessmichael"

@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import useScroll from "@/lib/hooks/use-scroll";
-import { isDev } from "@/lib/utils";
-import { Button, Flex } from "@radix-ui/themes";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { Button, Flex, IconButton } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
 
@@ -14,7 +14,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
   const pathname = usePathname();
   const isActive = pathname === href;
   return (
-    <Button variant="ghost" radius="medium">
+    <Button variant="ghost" radius="full">
       <Link href={href} className={`link ${isActive ? "active" : ""}`}>
         <Heading size="3" align="center" color={isActive ? "blue" : "gray"}>
           {title}
@@ -27,7 +27,6 @@ function NavLink({ href, title }: { href: string; title: string }) {
 export default function Nav() {
   const scrolled = useScroll(50);
   const { theme, setTheme } = useTheme();
-  const showButton = isDev();
 
   return (
     <>
@@ -45,13 +44,14 @@ export default function Nav() {
           px="6"
           py="4"
           justify="between"
+          align="center"
         >
           <Link href="/" className="flex items-center font-light text-3xl">
             <Heading color="blue" size="7">
               {"<MC>"}
             </Heading>
           </Link>
-          <Flex gap="4">
+          <Flex gap="4" align="center">
             <NavLink href="/" title="home" />
             <NavLink href="/about" title="about" />
             <NavLink href="/work" title="work" />
@@ -59,14 +59,14 @@ export default function Nav() {
             <NavLink href="/projects" title="projects" />
             <NavLink href="/gallery" title="gallery" />
             <NavLink href="/contact" title="contact" />
-            {showButton && (
-              <Button
-                variant="surface"
-                onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
-              >
-                {theme}
-              </Button>
-            )}
+            <IconButton
+              radius="full"
+              variant="soft"
+              className="text-gray-500 hover:text-gray-700"
+              onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
+            >
+              {theme === "light" ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
           </Flex>
         </Flex>
       </div>
