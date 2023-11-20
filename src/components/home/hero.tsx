@@ -18,7 +18,7 @@ const firstTextBlock = (
   </Code>
 );
 const secondTextBlock = (
-  <Heading className="text-left font-thin text-4xl ml-4">
+  <Heading className="text-left font-thin text-4xl ml-4 mt-4">
     My name is{" "}
     <Link href="/about" className="text-accent-color">
       <Strong>Michael Cohen</Strong>
