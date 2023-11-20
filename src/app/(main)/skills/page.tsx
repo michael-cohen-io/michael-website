@@ -9,7 +9,7 @@ async function fetchSkills(): Promise<SkillWithSection[]> {
       section: true,
     },
     orderBy: {
-      sectionId: "asc",
+      name: "asc",
     },
   });
   return skills;

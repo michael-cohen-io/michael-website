@@ -13,10 +13,10 @@ import {
   FaServer,
   FaSwift,
 } from "@meronex/icons/fa";
-import { GrStackOverflow } from "@meronex/icons/gr";
 import MdcFileDocumentOutline from "@meronex/icons/mdc/MdcFileDocumentOutline";
 import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
 import MdcTelevisionClassic from "@meronex/icons/mdc/MdcTelevisionClassic";
+import RiStackFill from "@meronex/icons/ri/RiStackFill";
 import {
   SiAndroid,
   SiDjango,
@@ -126,7 +126,7 @@ export default function IconByName({
     case IconName.OPENSEA:
       return <OpenSeaIcon />;
     case IconName.FS:
-      return <GrStackOverflow size={size} color={color} />;
+      return <RiStackFill size={size} color={color} className={className} />;
     case IconName.DS:
       return <FaServer size={size} color={color} className={className} />;
     case IconName.WEBDEV:

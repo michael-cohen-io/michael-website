@@ -1,8 +1,19 @@
 "use client";
 
+import { useState } from "react";
+
 import { SkillWithSection } from "@/lib/prisma";
 import * as RTabs from "@radix-ui/react-tabs";
-import { Box, Card, Flex, Grid, Inset, Strong, Text } from "@radix-ui/themes";
+import {
+  Box,
+  Card,
+  Flex,
+  Grid,
+  Heading,
+  HoverCard,
+  Inset,
+  Text,
+} from "@radix-ui/themes";
 
 import IconByName from "../icons/icons";
 
@@ -14,6 +25,48 @@ export type TabIdToName = {
   [key: string]: string;
 };
 
+function SkillCard(item: SkillWithSection) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <HoverCard.Root>
+      <HoverCard.Trigger>
+        <Card
+          size="1"
+          className="max-w-52 hover:shadow-3 cursor-pointer hover:text-accent-color"
+          variant="classic"
+          onMouseOver={() => setHovered(true)}
+          onMouseOut={() => setHovered(false)}
+        >
+          <Flex align="center" justify="center" direction="column">
+            <Inset clip="padding-box" side="top" pb="current" pt="current">
+              <IconByName
+                iconName={item.logo}
+                color={hovered ? item.iconColor : ""}
+                size="50"
+              />
+            </Inset>
+            <Text as="p" size="1" align="center">
+              {item.name}
+            </Text>
+          </Flex>
+        </Card>
+      </HoverCard.Trigger>
+      <HoverCard.Content>
+        <Flex gap="4">
+          <Box>
+            <Heading size="3" as="h3">
+              {item.name}
+            </Heading>
+            <Text as="div" size="2" style={{ maxWidth: 300 }} mt="3">
+              {item.description}
+            </Text>
+          </Box>
+        </Flex>
+      </HoverCard.Content>
+    </HoverCard.Root>
+  );
+}
+
 function TabContent({
   tabValue,
   tabItems,
@@ -23,27 +76,9 @@ function TabContent({
 }) {
   return (
     <RTabs.Content value={tabValue}>
-      <Grid columns="3" gap="3">
+      <Grid columns="4" gap="4">
         {tabItems.map((item) => (
-          <Card
-            key={item.id}
-            size="1"
-            className="w-52 hover:shadow-3 cursor-pointer hover:text-accent-color"
-            variant="classic"
-          >
-            <Flex align="center" justify="center" direction="column">
-              <Inset clip="padding-box" side="top" pb="current" pt="current">
-                <IconByName
-                  iconName={item.logo}
-                  color={item.iconColor}
-                  size="50"
-                />
-              </Inset>
-              <Text as="p" size="1" align="center">
-                {item.name}
-              </Text>
-            </Flex>
-          </Card>
+          <SkillCard key={item.id} {...item} />
         ))}
       </Grid>
     </RTabs.Content>
@@ -59,7 +94,7 @@ export default function Tabs({
 }) {
   return (
     <RTabs.Root
-      className="flex w-[85vw] shadow-3 shadow-blackA2 min-h-[60vh]"
+      className="flex min-w-[80vw] shadow-3 shadow-blackA2 min-h-[60vh]"
       defaultValue={"0"}
       orientation="vertical"
     >
@@ -69,7 +104,7 @@ export default function Tabs({
             <RTabs.Trigger
               key={tabId}
               value={tabId}
-              className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color hover:underline hover:underline-offset-4 hover:focus:shadow-black data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none cursor-default data-[state=active]:shadow-4 data-[state=active]:relative"
+              className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color hover:focus:shadow-black data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none cursor-default data-[state=active]:shadow-4 data-[state=active]:relative"
             >
               {tabIdToName[tabId]}
             </RTabs.Trigger>
@@ -77,7 +112,7 @@ export default function Tabs({
         </Flex>
       </RTabs.List>
 
-      <Box px="4" pt="3" pb="2">
+      <Flex px="8" pt="8" pb="2" justify="center">
         {Object.keys(tabDictionary).map((tabId) => (
           <TabContent
             key={tabId}
@@ -85,7 +120,7 @@ export default function Tabs({
             tabItems={tabDictionary[tabId]}
           />
         ))}
-      </Box>
+      </Flex>
     </RTabs.Root>
   );
 }
