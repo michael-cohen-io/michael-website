@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
+import React from "react";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 

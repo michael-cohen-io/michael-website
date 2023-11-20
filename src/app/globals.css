@@ -68,7 +68,6 @@ body {
   display: inline-block;
   position: relative;
   padding: 0.8rem;
-  font-weight: bold;
   line-height: 1;
   z-index: 1;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
@@ -120,4 +119,19 @@ body {
       width: 100%;
     }
   }
+}
+
+.DialogOverlay {
+  background: rgba(0 0 0 / 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+}
+
+.DialogContent {
+  overflow-y: auto;
 }
