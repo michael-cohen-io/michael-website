@@ -14,6 +14,7 @@ async function fetchWorkItem(id: number) {
 }
 
 export async function generateStaticParams() {
+  console.log("Hit Static Params!");
   const workData = await prisma.workEntry.findMany({
     orderBy: [{ startDate: "desc" }],
     select: {

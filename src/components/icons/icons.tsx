@@ -1,5 +1,4 @@
 import React from "react";
-import IconResearchAudience from "@rhiza/nielsen-icons/react-icons/research-audience";
 import {
   FaAmazon,
   FaAws,
@@ -11,6 +10,8 @@ import {
   FaEthereum,
 } from "@meronex/icons/fa";
 import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
+
+import MdcTelevisionClassic from "@meronex/icons/mdc/MdcTelevisionClassic";
 import {
   SiFlutter,
   SiAndroid,
@@ -68,7 +69,7 @@ export default function IconByName({
 }) {
   switch (iconName.toUpperCase()) {
     case IconName.NIELSEN:
-      return <IconResearchAudience accent="#262626" base="#262626" />;
+      return <MdcTelevisionClassic size={size} color={color} />;
     case IconName.AMAZON:
       return <FaAmazon size={size} color={color} />;
     case IconName.AWS:
