@@ -89,7 +89,7 @@ function TypingHero() {
 function StaticHero() {
   return (
     <>
-      <PageHeader title="Hero" />
+      <PageHeader title="Hero" hidden />
       <Grid columns="2" width="100%" justify="between" mt="6">
         <Flex direction="column" justify="start" width="max-content">
           <Code weight="bold" variant="soft" size="9">
