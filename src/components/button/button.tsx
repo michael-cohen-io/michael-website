@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 
+import { Button } from "@radix-ui/themes";
+
 interface ButtonProps {
   buttonStyle: "standard" | "inverted";
   children: React.ReactNode;
@@ -8,21 +10,23 @@ interface ButtonProps {
   props?: any;
 }
 
-export function Button({
+export function AButton({
   buttonStyle,
   children,
   className,
   ...props
 }: ButtonProps) {
   return (
-    <span
+    <Button
+      variant="surface"
+      radius="full"
       className={`cta-btn ${
         buttonStyle == "standard" ? "cta-btn--standard" : "cta-btn--inverted"
       } ${className}`}
       {...props}
     >
       {children}
-    </span>
+    </Button>
   );
 }
 
@@ -38,9 +42,9 @@ export function LinkButton({
 }: LinkButtonProps) {
   return (
     <Link href={href}>
-      <Button className={className} {...props}>
+      <AButton className={className} {...props}>
         {children}
-      </Button>
+      </AButton>
     </Link>
   );
 }

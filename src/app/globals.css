@@ -62,7 +62,6 @@ body {
 .cta-btn {
   display: inline-block;
   position: relative;
-  padding: 0.8rem;
   line-height: 1;
   z-index: 1;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
@@ -81,37 +80,37 @@ body {
 }
 
 .cta-btn--standard {
-  color: rgb(var(--white-1));
-  border: 2px solid var(--blue-12);
+  color: rgb(var(--gray-12));
 
   &::after {
-    background: var(--blue-12);
+    background: var(--accent-9);
     width: 100%;
+    border-radius: max(var(--radius-2), var(--radius-full));
   }
 
   &:hover {
-    color: var(--white-1);
-    text-decoration: none;
+    color: var(--accent-9);
     &::after {
       width: 0;
+      border-radius: max(var(--radius-2), var(--radius-full));
     }
   }
 }
 
 .cta-btn--inverted {
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  color: var(--accent-9);
 
   &::after {
-    background: var(--accent-color);
+    background: var(--accent-9);
+    border-radius: max(var(--radius-2), var(--radius-full));
   }
 
   &:hover {
-    color: rgb(var(--white-rgb));
-    text-decoration: none;
+    color: rgb(var(--gray-12));
 
     &::after {
       width: 100%;
+      border-radius: max(var(--radius-2), var(--radius-full));
     }
   }
 }
