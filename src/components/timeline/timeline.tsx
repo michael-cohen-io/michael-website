@@ -10,6 +10,7 @@ import {
 import WorkDialog from "@/components/dialog/work-dialog";
 import IconByName from "@/components/icons/icons";
 import { formatDate } from "@/lib/utils";
+import { gray } from "@radix-ui/colors";
 
 function WorkItem({ workItem }: any) {
   const backgroundColor = workItem.iconColor || "#3b82f6";
@@ -30,6 +31,7 @@ function WorkItem({ workItem }: any) {
         boxShadow: "none",
         background: backgroundColor,
         color: "#fff",
+        borderRadius: "1.0rem",
       }}
       contentArrowStyle={{
         borderRight: `7px solid ${backgroundColor}`,
@@ -48,7 +50,7 @@ function WorkItem({ workItem }: any) {
 
 export default function WorkTimeline({ workData }: { workData: any[] }) {
   return (
-    <VerticalTimeline>
+    <VerticalTimeline lineColor={gray.gray6}>
       {workData.map((work: any) => (
         <WorkItem key={work.id} workItem={work} />
       ))}

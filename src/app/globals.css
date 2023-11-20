@@ -4,28 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --secondary-rgb: 255, 255, 255;
-  --background-start-rgb: 203, 213, 225;
-  --background-end-rgb: 248, 250, 252;
-
-  --accent-color: #3b82f6;
-  --accent-color-transparent: 59, 130, 246, 0;
-
-  --white-rgb: 255, 255, 255;
-  --black-rgb: 0, 0, 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --secondary-rgb: 0, 0, 0;
-    --background-start-rgb: 2, 6, 23;
-    --background-end-rgb: 30, 41, 59;
-  }
-} */
-
 body {
   overflow: auto !important;
   padding: 0 !important;
@@ -41,8 +19,13 @@ body {
   color: var(--foreground-rgb) !important;
 }
 
+.vertical-timeline-element--work {
+  border-radius: max(var(--radius-2), var(--radius-full));
+}
+
 /* Timeline Item */
 .work-item {
+  border-radius: max(var(--radius-2), var(--radius-full));
   .date {
     color: var(--foreground-rgb) !important;
   }
@@ -129,4 +112,16 @@ body {
 .DialogContent {
   font-family: var(--font-roboto);
   overflow-y: auto;
+  font-weight: 300 !important;
+  border-radius: max(var(--radius-2), var(--radius-full));
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
