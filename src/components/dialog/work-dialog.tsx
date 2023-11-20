@@ -27,12 +27,15 @@ const TextWithLineBreaks = ({ text }: { text: string }) => {
 };
 
 export default function WorkDialog({
-  workItem,
+  workItem, // open,
+  // setOpen,
 }: {
   workItem: WorkWithCompany;
+  // open: boolean;
+  // setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <Dialog.Root>
+    <>
       <Dialog.Trigger asChild>
         <div>
           <Heading className="vertical-timeline-element-title" size="4">
@@ -69,6 +72,6 @@ export default function WorkDialog({
           </Dialog.Content>
         </Dialog.Overlay>
       </Dialog.Portal>
-    </Dialog.Root>
+    </>
   );
 }

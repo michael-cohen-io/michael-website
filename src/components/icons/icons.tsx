@@ -1,34 +1,35 @@
 import React from "react";
+
+import { Watson } from "@carbon/icons-react";
+import { CgWebsite } from "@meronex/icons/cg";
 import {
   FaAmazon,
   FaAws,
-  FaJava,
-  FaSwift,
-  FaPython,
   FaCoffee,
   FaDatabase,
   FaEthereum,
+  FaJava,
+  FaPython,
+  FaSwift,
 } from "@meronex/icons/fa";
-import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
-
-import MdcTelevisionClassic from "@meronex/icons/mdc/MdcTelevisionClassic";
-import {
-  SiFlutter,
-  SiAndroid,
-  SiReact,
-  SiGatsby,
-  SiFirebase,
-  SiRedux,
-  SiShopify,
-  SiGraphql,
-  SiTypescript,
-} from "@meronex/icons/si";
 import { GrStackOverflow } from "@meronex/icons/gr";
 import MdcFileDocumentOutline from "@meronex/icons/mdc/MdcFileDocumentOutline";
-import { CgWebsite } from "@meronex/icons/cg";
-import { Watson } from "@carbon/icons-react";
-import UFIcon from "./UFIcon";
+import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
+import MdcTelevisionClassic from "@meronex/icons/mdc/MdcTelevisionClassic";
+import {
+  SiAndroid,
+  SiFirebase,
+  SiFlutter,
+  SiGatsby,
+  SiGraphql,
+  SiReact,
+  SiRedux,
+  SiShopify,
+  SiTypescript,
+} from "@meronex/icons/si";
+
 import OpenSeaIcon from "./OpenSeaIcon";
+import UFIcon from "./UFIcon";
 
 const IconName = {
   AMAZON: "AMAZON",
@@ -62,42 +63,54 @@ export default function IconByName({
   iconName,
   size = "5em",
   color = "#333333",
+  className = "",
 }: {
   iconName: string;
   size?: string;
   color?: string;
+  className?: string;
 }) {
   switch (iconName.toUpperCase()) {
     case IconName.NIELSEN:
-      return <MdcTelevisionClassic size={size} color={color} />;
+      return (
+        <MdcTelevisionClassic size={size} color={color} className={className} />
+      );
     case IconName.AMAZON:
-      return <FaAmazon size={size} color={color} />;
+      return <FaAmazon size={size} color={color} className={className} />;
     case IconName.AWS:
-      return <FaAws size={size} color={color} />;
+      return <FaAws size={size} color={color} className={className} />;
     case IconName.SQL:
-      return <FaDatabase size={size} color={color} />;
+      return <FaDatabase size={size} color={color} className={className} />;
     case IconName.GRAPHQL:
-      return <SiGraphql size={size} color={color} />;
+      return <SiGraphql size={size} color={color} className={className} />;
     case IconName.IBM:
       return <Watson color="#ffffff" />;
     case IconName.ANDROID:
-      return <SiAndroid size={size} color={color} />;
+      return <SiAndroid size={size} color={color} className={className} />;
     case IconName.REACT:
-      return <SiReact size={size} color={color} />;
+      return <SiReact size={size} color={color} className={className} />;
     case IconName.GATSBY:
-      return <SiGatsby size={size} color={color} />;
+      return <SiGatsby size={size} color={color} className={className} />;
     case IconName.FIREBASE:
-      return <SiFirebase size={size} color={color} />;
+      return <SiFirebase size={size} color={color} className={className} />;
     case IconName.REDUX:
-      return <SiRedux size={size} color={color} />;
+      return <SiRedux size={size} color={color} className={className} />;
     case IconName.SHOPIFY:
-      return <SiShopify size={size} color={color} />;
+      return <SiShopify size={size} color={color} className={className} />;
     case IconName.NOSQL:
-      return <MdcFileDocumentOutline size={size} color={color} />;
+      return (
+        <MdcFileDocumentOutline
+          size={size}
+          color={color}
+          className={className}
+        />
+      );
     case IconName.JAVA:
-      return <FaJava size={size} color={color} />;
+      return <FaJava size={size} color={color} className={className} />;
     case IconName.CATAN:
-      return <MdcHexagonSlice6 size={size} color={color} />;
+      return (
+        <MdcHexagonSlice6 size={size} color={color} className={className} />
+      );
     case IconName.UF:
       return <UFIcon />;
     case IconName.OPENSEA:
@@ -105,20 +118,20 @@ export default function IconByName({
     case IconName.FS:
       return <GrStackOverflow />;
     case IconName.WEBDEV:
-      return <CgWebsite size={size} color={color} />;
+      return <CgWebsite size={size} color={color} className={className} />;
     case IconName.SWIFT:
-      return <FaSwift size={size} color={color} />;
+      return <FaSwift size={size} color={color} className={className} />;
     case IconName.PYTHON:
-      return <FaPython size={size} color={color} />;
+      return <FaPython size={size} color={color} className={className} />;
     case IconName.COFFEE:
-      return <FaCoffee size={size} color={color} />;
+      return <FaCoffee size={size} color={color} className={className} />;
     case IconName.CRYPTO:
-      return <FaEthereum size={size} color={color} />;
+      return <FaEthereum size={size} color={color} className={className} />;
     case IconName.TYPESCRIPT:
-      return <SiTypescript size={size} color={color} />;
+      return <SiTypescript size={size} color={color} className={className} />;
     case IconName.FLUTTER:
     default: {
-      return <SiFlutter size={size} color={color} />;
+      return <SiFlutter size={size} color={color} className={className} />;
     }
   }
 }

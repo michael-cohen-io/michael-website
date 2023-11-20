@@ -2,6 +2,7 @@
 
 import "react-vertical-timeline-component/style.min.css";
 
+import { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,6 +12,8 @@ import WorkDialog from "@/components/dialog/work-dialog";
 import IconByName from "@/components/icons/icons";
 import { formatDate } from "@/lib/utils";
 import { gray } from "@radix-ui/colors";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Box, Flex } from "@radix-ui/themes";
 
 function WorkItem({ workItem }: any) {
   const backgroundColor = workItem.iconColor || "#3b82f6";
@@ -22,28 +25,39 @@ function WorkItem({ workItem }: any) {
   const dateStr = `${formatDate(workItem.startDate)} - ${formatDate(
     workItem.endDate,
   )}`;
+  // const [open, setOpen] = useState(false);
   return (
-    <VerticalTimelineElement
-      className="vertical-timeline-element--work cursor-pointer font-light"
-      textClassName="work-item"
-      contentStyle={{
-        boxShadow: "none",
-        background: backgroundColor,
-        color: "#fff",
-        borderRadius: "var(--radius-3)",
-      }}
-      contentArrowStyle={{
-        borderRight: `7px solid ${backgroundColor}`,
-      }}
-      date={dateStr}
-      dateClassName="text-slate-500 font-light text-sm"
-      iconStyle={iconStyle}
-      iconClassName="icon"
-      icon={<IconByName iconName={workItem.company.name} />}
-      visible={true}
-    >
-      <WorkDialog workItem={workItem} />
-    </VerticalTimelineElement>
+    <Dialog.Root>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work cursor-pointer font-light"
+        textClassName="work-item"
+        contentStyle={{
+          boxShadow: "none",
+          background: backgroundColor,
+          color: "#fff",
+          borderRadius: "var(--radius-3)",
+        }}
+        contentArrowStyle={{
+          borderRight: `7px solid ${backgroundColor}`,
+        }}
+        date={dateStr}
+        dateClassName="text-slate-500 font-light text-sm"
+        iconStyle={iconStyle}
+        iconClassName="icon"
+        icon={
+          <Flex className="flex justify-center">
+            <Dialog.Trigger asChild>
+              <Box position="fixed" top="50%">
+                <IconByName iconName={workItem.company.name} />
+              </Box>
+            </Dialog.Trigger>
+          </Flex>
+        }
+        visible={true}
+      >
+        <WorkDialog workItem={workItem} />
+      </VerticalTimelineElement>
+    </Dialog.Root>
   );
 }
 
