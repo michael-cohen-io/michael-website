@@ -49,9 +49,6 @@ export default function Nav() {
             <Heading color="blue" size="7">
               {"<MC>"}
             </Heading>
-            <Heading color="blue" size="7" className="ml-3">
-              Michael Cohen
-            </Heading>
           </Link>
           <Flex gap="4">
             <NavLink href="/" title="home" />

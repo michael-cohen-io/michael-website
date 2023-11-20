@@ -7,7 +7,7 @@ import Fade from "react-reveal/Fade";
 import Typist from "react-typist";
 
 import { isDev } from "@/lib/utils";
-import { Code, Flex, Grid } from "@radix-ui/themes";
+import { Code, Flex, Grid, Strong } from "@radix-ui/themes";
 
 import PageHeader from "../layout/page-header";
 import Heading from "../typography/heading";
@@ -97,8 +97,8 @@ function StaticHero() {
           </Code>
           <Heading className="text-left font-thin text-4xl ml-4">
             My name is{" "}
-            <Link href="/about" className="font-bold text-accent-color">
-              Michael Cohen
+            <Link href="/about" className="text-accent-color">
+              <Strong>Michael Cohen</Strong>
             </Link>
             .
           </Heading>
