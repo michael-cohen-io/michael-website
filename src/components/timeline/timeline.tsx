@@ -24,7 +24,6 @@ function WorkItem({ workItem }: any) {
   const dateStr = `${formatDate(workItem.startDate)} - ${formatDate(
     workItem.endDate,
   )}`;
-  // const [open, setOpen] = useState(false);
   return (
     <Dialog.Root>
       <VerticalTimelineElement

@@ -27,12 +27,9 @@ const TextWithLineBreaks = ({ text }: { text: string }) => {
 };
 
 export default function WorkDialog({
-  workItem, // open,
-  // setOpen,
+  workItem,
 }: {
   workItem: WorkWithCompany;
-  // open: boolean;
-  // setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <>
