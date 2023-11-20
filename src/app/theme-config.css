@@ -1,4 +1,12 @@
 .radix-themes {
   --default-font-family: var(--font-roboto);
   --container-4: 85vw;
+  --shadow-4: 0 0 0 1px var(--accent-9), 0 1px 10px var(--accent-a3),
+    0 4px 12px -8px var(--accent-a9);
+}
+
+:is(.dark, .dark-theme),
+:is(.dark, .dark-theme) :where(.radix-themes:not(.light, .light-theme)) {
+  --shadow-4: 0 0 0 1px var(--accent-9), 0 8px 40px var(--accent-a3),
+    0 4px 32px -16px var(--accent-a9);
 }

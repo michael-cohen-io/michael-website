@@ -18,3 +18,9 @@ const workWithCompany = Prisma.validator<Prisma.WorkEntryDefaultArgs>()({
 export type WorkWithCompany = Prisma.WorkEntryGetPayload<
   typeof workWithCompany
 >;
+
+const skillWithSection = Prisma.validator<Prisma.SkillDefaultArgs>()({
+  include: { section: true },
+});
+
+export type SkillWithSection = Prisma.SkillGetPayload<typeof skillWithSection>;

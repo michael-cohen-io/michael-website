@@ -10,6 +10,7 @@ import {
   FaEthereum,
   FaJava,
   FaPython,
+  FaServer,
   FaSwift,
 } from "@meronex/icons/fa";
 import { GrStackOverflow } from "@meronex/icons/gr";
@@ -18,10 +19,12 @@ import MdcHexagonSlice6 from "@meronex/icons/mdc/MdcHexagonSlice6";
 import MdcTelevisionClassic from "@meronex/icons/mdc/MdcTelevisionClassic";
 import {
   SiAndroid,
+  SiDjango,
   SiFirebase,
   SiFlutter,
   SiGatsby,
   SiGraphql,
+  SiNextDotJs,
   SiReact,
   SiRedux,
   SiShopify,
@@ -40,6 +43,7 @@ const IconName = {
   ANDROID: "ANDROID",
   REACT: "REACT",
   FS: "FULL STACK",
+  DS: "DISTRIBUTED SYSTEMS",
   JAVA: "JAVA",
   CATAN: "CATAN",
   UF: "UNIVERSITY OF FLORIDA",
@@ -49,7 +53,9 @@ const IconName = {
   PYTHON: "PYTHON",
   COFFEE: "COFFEE",
   GATSBY: "GATSBY",
+  NEXTJS: "NEXTJS",
   FIREBASE: "FIREBASE",
+  DJANGO: "DJANGO",
   REDUX: "REDUX",
   SQL: "SQL",
   GRAPHQL: "GRAPHQL",
@@ -97,6 +103,10 @@ export default function IconByName({
       return <SiRedux size={size} color={color} className={className} />;
     case IconName.SHOPIFY:
       return <SiShopify size={size} color={color} className={className} />;
+    case IconName.DJANGO:
+      return <SiDjango size={size} color={color} className={className} />;
+    case IconName.NEXTJS:
+      return <SiNextDotJs size={size} color={color} className={className} />;
     case IconName.NOSQL:
       return (
         <MdcFileDocumentOutline
@@ -116,7 +126,9 @@ export default function IconByName({
     case IconName.OPENSEA:
       return <OpenSeaIcon />;
     case IconName.FS:
-      return <GrStackOverflow />;
+      return <GrStackOverflow size={size} color={color} />;
+    case IconName.DS:
+      return <FaServer size={size} color={color} className={className} />;
     case IconName.WEBDEV:
       return <CgWebsite size={size} color={color} className={className} />;
     case IconName.SWIFT:
