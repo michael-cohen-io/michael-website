@@ -2,7 +2,6 @@
 
 import useScroll from "@/lib/hooks/use-scroll";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 function NavLink({ href, title }: { href: string; title: string }) {

@@ -7,12 +7,9 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { useRouter } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 
 function WorkItem({ workItem }: any) {
-  const router = useRouter();
-
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
