@@ -46,7 +46,7 @@ export default function WorkDialog({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay">
-          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] pt-4 px-4 focus:outline-none">
+          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] pt-6 px-8 focus:outline-none">
             <Dialog.Title className="text-mauve12 m-0">
               <Flex direction="column">
                 <Heading size="4" as="h1">

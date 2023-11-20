@@ -36,7 +36,7 @@ function WorkItem({ workItem }: any) {
         borderRight: `7px solid ${backgroundColor}`,
       }}
       date={dateStr}
-      dateClassName="text-slate-500"
+      dateClassName="text-slate-500 font-light text-sm"
       iconStyle={iconStyle}
       iconClassName="icon"
       icon={<IconByName iconName={workItem.company.name} />}

@@ -19,6 +19,16 @@ body {
   color: var(--foreground-rgb) !important;
 }
 
+.vertical-timeline-element--work {
+  scale: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+
+  &:hover {
+    scale: 1.05;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  }
+}
+
 /* Timeline Item */
 .work-item {
   .date {
@@ -121,4 +131,32 @@ body {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.DialogOverlay[data-state="open"],
+.DialogContent[data-state="open"] {
+  animation: fadeIn 300ms ease-out;
+}
+
+.DialogOverlay[data-state="closed"],
+.DialogContent[data-state="closed"] {
+  animation: fadeOut 300ms ease-in;
 }
