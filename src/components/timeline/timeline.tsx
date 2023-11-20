@@ -1,6 +1,7 @@
 "use client";
 
 import IconByName from "@/components/icons/icons";
+import WorkDialog from "@/components/dialog/work-dialog";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -40,13 +41,8 @@ function WorkItem({ workItem }: any) {
       iconClassName="icon"
       icon={<IconByName iconName={workItem.company.name} />}
       visible={true}
-      onTimelineElementClick={() => router.push(`/work/${workItem.id}`)}
-      iconOnClick={() => router.push(`/work/${workItem.id}`)}
     >
-      <h2 className="vertical-timeline-element-title">
-        {workItem.company.name} | {workItem.role}
-      </h2>
-      <h3 className="vertical-timeline-element-subtitle">{workItem.team}</h3>
+      <WorkDialog workItem={workItem} />
     </VerticalTimelineElement>
   );
 }

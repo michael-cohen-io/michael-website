@@ -16,9 +16,7 @@ export default function PageHeader({
           hidden ? "invisible" : ""
         }`}
       >
-        <div
-          className={`z-10 w-full px-1 xl:px-0 ${hidden ? "invisible" : ""}`}
-        >
+        <div className={`w-full px-1 xl:px-0 ${hidden ? "invisible" : ""}`}>
           <h1 className="text-center font-light text-2xl">
             {capitalize(title)}
           </h1>

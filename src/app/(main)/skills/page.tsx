@@ -1,8 +1,6 @@
 import React from "react";
 import prisma from "@/lib/prisma";
 
-import SkillsTabSection from "./tabs";
-
 async function fetchSkills() {
   const skills = await prisma.skill.findMany({
     include: {
@@ -18,7 +16,7 @@ export default async function Skills() {
   return (
     <section id="skills">
       <h1>Skills</h1>
-      <SkillsTabSection skillsData={skillsData} />
+      coming soon...
     </section>
   );
 }
