@@ -48,6 +48,7 @@ body {
   line-height: 1;
   z-index: 1;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  border-radius: var(--radius-2);
 
   &::after {
     content: "";
@@ -59,23 +60,26 @@ body {
     bottom: 0;
     z-index: -1;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    border-radius: var(--radius-2);
+  }
+
+  &:hover {
+    border-radius: var(--radius-2);
   }
 }
 
 .cta-btn--standard {
-  color: rgb(var(--gray-12));
+  color: var(--white-a12);
 
   &::after {
     background: var(--accent-a11);
     width: 100%;
-    border-radius: max(var(--radius-2), var(--radius-full));
   }
 
   &:hover {
     color: var(--accent-a11);
     &::after {
       width: 0;
-      border-radius: max(var(--radius-2), var(--radius-full));
     }
   }
 }
@@ -85,15 +89,13 @@ body {
 
   &::after {
     background: var(--accent-a11);
-    border-radius: max(var(--radius-2), var(--radius-full));
   }
 
   &:hover {
-    color: rgb(var(--gray-12));
+    color: var(--white-a12);
 
     &::after {
       width: 100%;
-      border-radius: max(var(--radius-2), var(--radius-full));
     }
   }
 }
