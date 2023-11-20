@@ -2,7 +2,6 @@
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
