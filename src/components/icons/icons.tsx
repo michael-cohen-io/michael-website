@@ -9,6 +9,7 @@ import {
   FaDatabase,
   FaEthereum,
   FaJava,
+  FaMobileAlt,
   FaPython,
   FaServer,
   FaSwift,
@@ -63,6 +64,7 @@ const IconName = {
   SHOPIFY: "SHOPIFY",
   CRYPTO: "CRYPTO",
   TYPESCRIPT: "TYPESCRIPT",
+  MOBILE: "MOBILE",
 };
 
 export default function IconByName({
@@ -137,6 +139,8 @@ export default function IconByName({
       return <FaPython size={size} color={color} className={className} />;
     case IconName.COFFEE:
       return <FaCoffee size={size} color={color} className={className} />;
+    case IconName.MOBILE:
+      return <FaMobileAlt size={size} color={color} className={className} />;
     case IconName.CRYPTO:
       return <FaEthereum size={size} color={color} className={className} />;
     case IconName.TYPESCRIPT:
