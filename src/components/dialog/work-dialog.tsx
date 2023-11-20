@@ -5,7 +5,7 @@ import React from "react";
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Flex, Inset, Separator, Strong, Text } from "@radix-ui/themes";
+import { Flex, Separator, Strong, Text } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
 
