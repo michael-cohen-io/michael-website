@@ -43,7 +43,7 @@ export default function WorkDialog({
                 </Heading>
                 <Flex className="flex mb-4 items-center justify-between w-full">
                   <Heading size="3" as="h2">
-                    {workItem.role}
+                    {workItem.team}
                   </Heading>
                   <Heading size="2" as="h2">
                     {formatDate(workItem.startDate)} -{" "}
@@ -53,8 +53,23 @@ export default function WorkDialog({
               </Flex>
             </Dialog.Title>
             <Separator my="1" size="4" />
-            <Dialog.Description className="text-mauve11 mt-[10px] mx-8 mb-5 leading-normal">
-              <TextWithLineBreaks text={workItem.description} />
+            <Dialog.Description>
+              <Heading
+                size="2"
+                as="h2"
+                weight="medium"
+                className="mt-[10px] mx-8"
+              >
+                {workItem.role}
+              </Heading>
+              <Flex
+                direction="column"
+                align="start"
+                justify="start"
+                className="text-mauve11 mt-[10px] mx-8 mb-5 leading-normal"
+              >
+                <TextWithLineBreaks text={workItem.description} />
+              </Flex>
             </Dialog.Description>
           </Dialog.Content>
         </Dialog.Overlay>
