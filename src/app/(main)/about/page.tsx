@@ -5,16 +5,18 @@ import { useState } from "react";
 import Fade from "react-reveal/Fade";
 
 import { InvertedButton, StandardButton } from "@/components/button/button";
+import useMediaQuery from "@/lib/hooks/use-media-query";
 import { Flex, Text } from "@radix-ui/themes";
 
 export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
+  const { isMobile, isTablet } = useMediaQuery();
   return (
     <>
       <Flex
-        align="start"
+        align={{ initial: "center", md: "start" }}
         justify="between"
-        direction={"row-reverse"}
+        direction={{ initial: "column-reverse", md: "row-reverse" }}
         className="max-w-screen-xl w-full"
       >
         <Fade
@@ -50,14 +52,24 @@ export default function About() {
               to pretend I&apos;m fashionable.
             </Text>
             <br />
-            <StandardButton href="/work">
-              read about my work experience
-            </StandardButton>
+            <Flex
+              direction={{ initial: "column", md: "row" }}
+              align={{ initial: "center", md: "start" }}
+            >
+              <StandardButton href="/work">
+                read about my work experience
+              </StandardButton>
+            </Flex>
             <Text size="2" className="mt-4">
               are you more oldschool? read on at
-              <InvertedButton href="/MichaelCohenResume.pdf" className="mt-2">
-                my_resume_final_final_copy_NEW.pdf
-              </InvertedButton>
+              <Flex
+                direction={{ initial: "column", md: "row" }}
+                align={{ initial: "center", md: "start" }}
+              >
+                <InvertedButton href="/MichaelCohenResume.pdf" className="mt-2">
+                  my_resume_final_final_copy_NEW.pdf
+                </InvertedButton>
+              </Flex>
             </Text>
           </Flex>
         </Fade>
@@ -68,22 +80,46 @@ export default function About() {
           distance="30px"
           when={textRevealed}
         >
-          <div style={{ overflow: "hidden" }}>
-            <Image
-              src="/contact.jpeg"
-              alt="Michael Profile image"
-              width="400"
-              height="400"
-              style={{
-                maxHeight: "400px",
-                maxWidth: "400px",
-                objectFit: "cover",
-                objectPosition: "center top",
-              }}
-              objectFit="cover"
-              className="mr-2 rounded-6"
-            />
-          </div>
+          {isMobile || isTablet ? (
+            <Flex
+              style={{ overflow: "hidden" }}
+              direction="column"
+              justify="center"
+              mb="4"
+            >
+              <Image
+                src="/contact.jpeg"
+                alt="Michael Profile image"
+                style={{
+                  height: "100%",
+                  maxHeight: "300px",
+                  maxWidth: "300px",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+                width={300}
+                height={300}
+                className="mr-2 rounded-6"
+              />
+            </Flex>
+          ) : (
+            <Flex style={{ overflow: "hidden" }}>
+              <Image
+                src="/contact.jpeg"
+                alt="Michael Profile image"
+                style={{
+                  height: "100%",
+                  maxHeight: "400px",
+                  maxWidth: "400px",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+                width={400}
+                height={400}
+                className="mr-2 rounded-6"
+              />
+            </Flex>
+          )}
         </Fade>
       </Flex>
     </>

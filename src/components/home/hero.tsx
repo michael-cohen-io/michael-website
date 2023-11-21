@@ -136,8 +136,8 @@ export default function Hero() {
                 width: "100%",
                 height: "auto",
               }}
-              width="400"
-              height="400"
+              width={400}
+              height={400}
               className="grayscale mr-2 rounded-6 hover:grayscale-0 drop-shadow-2xl align-bottom"
             />
           </Fade>

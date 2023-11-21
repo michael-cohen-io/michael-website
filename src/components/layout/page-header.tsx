@@ -1,9 +1,7 @@
 "use client";
 
-import { capitalize } from "@/lib/utils";
-import { Flex } from "@radix-ui/themes";
-
-import Heading from "../typography/heading";
+import { capitalize } from '@/lib/utils';
+import { Flex, Heading } from '@radix-ui/themes';
 
 export default function PageHeader({
   title,
@@ -19,7 +17,7 @@ export default function PageHeader({
         className={`${hidden ? "invisible" : ""}`}
       >
         <div className={`w-full px-1 xl:px-0 ${hidden ? "invisible" : ""}`}>
-          <Heading className="text-center font-light" size="8">
+          <Heading className="text-center" weight="light" size="8">
             {capitalize(title)}
           </Heading>
         </div>
