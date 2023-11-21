@@ -69,7 +69,7 @@ export const MobileMenu = ({ children }: { children: React.ReactNode }) => {
   return (
     <Portal>
       <Theme accentColor="blue" panelBackground="solid" scaling="100%">
-        <RemoveScroll as={Slot} allowPinchZoom enabled>
+        <RemoveScroll as={Slot} enabled>
           <Box
             position="fixed"
             inset="0"
