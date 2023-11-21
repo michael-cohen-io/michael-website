@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 
 import { shorten } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
+import { Box, Card, Flex, Heading, Inset, Text } from "@radix-ui/themes";
 
 import { LoadingSpinner } from "../loading";
 import { TextWithLineBreaks } from "../typography/text";
@@ -59,12 +59,10 @@ const GalleryItemDialog = ({
 export default function GalleryItem({
   item,
   cardImage,
-  itemOSLink,
   dialogImage,
 }: {
   item: NFT;
   chain: string;
-  itemOSLink: string;
   cardImage: React.ReactNode;
   dialogImage: React.ReactNode;
 }) {
