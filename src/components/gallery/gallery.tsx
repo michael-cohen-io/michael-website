@@ -27,7 +27,7 @@ async function fetchOwnedNFTs(
   if (!OS_API_KEY || OS_API_KEY === "") {
     throw new Error("OpenSea API key is not set");
   }
-  const url = `${OS_API_BASE_URI}/${chain}/account/${accountAddress}/nfts?limit=21${
+  const url = `${OS_API_BASE_URI}/${chain}/account/${accountAddress}/nfts?limit=20${
     page ? `&next=${page}` : ""
   }`;
   const res = await fetch(url, options);
@@ -47,7 +47,7 @@ export default async function Gallery({
   const nftResults = await fetchOwnedNFTs(accountAddress, chain);
   return (
     <ScrollArea scrollbars="vertical" style={{ height: "65vh" }}>
-      <Grid columns="5" gap="2" justify="between">
+      <Grid columns="4" gap="2" justify="between">
         {nftResults.nfts.map((nft) => (
           <Suspense key={nft.identifier} fallback={<LoadingSpinner />}>
             <GalleryItem item={nft} chain={chain} />

@@ -33,7 +33,7 @@ export default async function GalleryItem({
   const itemOSLink = `https://opensea.io/assets/${chain}/${item.contract}/${item.identifier}`;
   return (
     <Suspense fallback={<LoadingSpinner />}>
-      <Card size="2" style={{ width: 350 }}>
+      <Card size="2" style={{ width: "20vw" }}>
         <Inset clip="border-box" side="top" pb="current">
           <Link href={itemOSLink} asChild>
             <Image
