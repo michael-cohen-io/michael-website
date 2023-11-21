@@ -1,14 +1,16 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { init } from "next/dist/compiled/webpack/webpack";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import useScroll from "@/lib/hooks/use-scroll";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { Button, Flex, IconButton } from "@radix-ui/themes";
+import { HamburgerMenuIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { Button, Flex, IconButton, Tooltip } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
+import { useMobileMenuContext } from "./mobile-nav";
 
 function NavLink({ href, title }: { href: string; title: string }) {
   const pathname = usePathname();
@@ -27,6 +29,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
 export default function Nav() {
   const scrolled = useScroll(50);
   const { theme, setTheme } = useTheme();
+  const mobileMenu = useMobileMenuContext();
 
   return (
     <>
@@ -37,9 +40,11 @@ export default function Nav() {
             : "bg-white/0"
         } z-30 transition-all`}
       >
+        {/* Desktop Menu */}
         <Flex
           height="max-content"
           width="100%"
+          display={{ initial: "none", sm: "none", md: "flex" }}
           mx="9"
           px="6"
           py="4"
@@ -51,7 +56,12 @@ export default function Nav() {
               {"<MC>"}
             </Heading>
           </Link>
-          <Flex gap="4" align="center">
+
+          <Flex
+            display={{ initial: "none", sm: "none", md: "flex" }}
+            gap="4"
+            align="center"
+          >
             <NavLink href="/" title="home" />
             <NavLink href="/about" title="about" />
             <NavLink href="/work" title="work" />
@@ -66,6 +76,43 @@ export default function Nav() {
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>
+          </Flex>
+        </Flex>
+        {/* Mobile Menu */}
+        <Flex
+          height="max-content"
+          width="100%"
+          display={{ sm: "flex", md: "none" }}
+          px="4"
+          py="4"
+          align="center"
+          justify="between"
+        >
+          <Link href="/" className="flex items-center text-3xl">
+            <Heading color="blue" size="7" weight="regular">
+              {"<MC>"}
+            </Heading>
+          </Link>
+          <Flex display={{ md: "none" }} align="center" gap="4" pr="4">
+            <IconButton
+              radius="full"
+              variant="soft"
+              className="text-gray-500 hover:text-gray-700"
+              onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
+            >
+              {theme === "light" ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
+            <Tooltip content="Navigation">
+              <IconButton
+                size="3"
+                variant="ghost"
+                radius="large"
+                data-state={mobileMenu.open ? "open" : "closed"}
+                onClick={() => mobileMenu.setOpen((open) => !open)}
+              >
+                <HamburgerMenuIcon width="24" height="24" />
+              </IconButton>
+            </Tooltip>
           </Flex>
         </Flex>
       </div>
