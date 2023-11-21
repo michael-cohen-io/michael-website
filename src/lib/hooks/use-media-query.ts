@@ -39,8 +39,9 @@ export default function useMediaQuery() {
     device,
     width: dimensions?.width,
     height: dimensions?.height,
-    isMobile: device === "mobile",
+    isPhone: device === "mobile",
     isTablet: device === "tablet",
+    isMobile: device === "mobile" || device === "tablet",
     isDesktop: device === "desktop",
   };
 }

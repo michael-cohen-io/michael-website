@@ -43,7 +43,7 @@ export default async function Skills() {
   );
   sectionIdToSkills[0] = skillsData;
   return (
-    <div className="z-10 w-full max-w-6xl px-1 xl:px-0">
+    <div className="z-10 w-full px-1 xl:px-0">
       <Tabs tabDictionary={sectionIdToSkills} tabIdToName={sectionIdToName} />
     </div>
   );

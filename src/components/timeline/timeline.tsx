@@ -16,8 +16,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Box, Flex } from "@radix-ui/themes";
 
 function WorkItem({ workItem }: any) {
-  const { isMobile, isTablet } = useMediaQuery();
-  const mobileEnabled = isMobile || isTablet;
+  const { isMobile } = useMediaQuery();
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
@@ -43,7 +42,7 @@ function WorkItem({ workItem }: any) {
         }}
         date={dateStr}
         dateClassName={`font-light text-sm work-timeline--${
-          mobileEnabled ? "date-mobile" : "date"
+          isMobile ? "date-mobile" : "date"
         }`}
         iconStyle={iconStyle}
         iconClassName="icon"

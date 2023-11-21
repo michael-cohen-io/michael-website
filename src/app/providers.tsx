@@ -50,7 +50,7 @@ function MobileMenuContent() {
         justify="between"
         align="center"
       >
-        <Link href="/" className="flex items-center text-3xl">
+        <Link href="/" className="flex items-center text-3xl select-none">
           <Heading color="blue" size="7" weight="regular">
             {"<MC>"}
           </Heading>

@@ -49,7 +49,10 @@ export default function Nav() {
           justify="between"
           align="center"
         >
-          <Link href="/" className="flex items-center font-light text-3xl">
+          <Link
+            href="/"
+            className="flex items-center font-light text-3xl select-none"
+          >
             <Heading color="blue" size="7">
               {"<MC>"}
             </Heading>
@@ -79,7 +82,7 @@ export default function Nav() {
           align="center"
           justify="between"
         >
-          <Link href="/" className="flex items-center text-3xl">
+          <Link href="/" className="flex items-center text-3xl select-none">
             <Heading color="blue" size="7" weight="regular">
               {"<MC>"}
             </Heading>

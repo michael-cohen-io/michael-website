@@ -10,7 +10,7 @@ import { Flex, Text } from "@radix-ui/themes";
 
 export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
-  const { isMobile, isTablet } = useMediaQuery();
+  const { isMobile } = useMediaQuery();
   return (
     <>
       <Flex
@@ -80,7 +80,7 @@ export default function About() {
           distance="30px"
           when={textRevealed}
         >
-          {isMobile || isTablet ? (
+          {isMobile ? (
             <Flex
               style={{ overflow: "hidden" }}
               direction="column"
