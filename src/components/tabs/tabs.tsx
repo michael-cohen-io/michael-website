@@ -33,7 +33,7 @@ function SkillCard(item: SkillWithSection) {
       <HoverCard.Trigger>
         <Card
           size="1"
-          className="hover:shadow-3 cursor-pointer"
+          className="hover:shadow-3 cursor-pointer GalleryCard"
           variant="classic"
           onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}
@@ -122,7 +122,7 @@ export default function Tabs({
             <RTabs.Trigger
               key={tabId}
               value={tabId}
-              className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color hover:focus:shadow-black data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none cursor-default data-[state=active]:shadow-4 data-[state=active]:relative"
+              className="cursor-pointer bg-white px-5 h-[45px] flex-1 flex items-center justify-center leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color hover:focus:shadow-black data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none cursor-default data-[state=active]:shadow-4 data-[state=active]:relative"
             >
               {tabIdToName[tabId]}
             </RTabs.Trigger>
