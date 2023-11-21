@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 
 import { shorten } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Box, Card, Flex, Heading, Inset, Text } from "@radix-ui/themes";
+import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
 
 import { LoadingSpinner } from "../loading";
 import { TextWithLineBreaks } from "../typography/text";
@@ -25,15 +25,17 @@ export type NFT = {
 
 const GalleryItemDialog = ({
   item,
+  itemOSLink,
   dialogImage,
 }: {
   item: NFT;
+  itemOSLink: string;
   dialogImage: React.ReactNode;
 }) => {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="DialogOverlay">
-        <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
+        <Dialog.Content className="DialogContent data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
           {dialogImage}
           <Dialog.Title className={`pt-6 px-8`}>
             <Flex direction="column">
@@ -41,9 +43,14 @@ const GalleryItemDialog = ({
                 {item.name}
               </Heading>
               <Flex className="flex mb-4 items-center justify-between w-full">
-                <Heading size="3" as="h2">
-                  {item.collection}
-                </Heading>
+                <Link
+                  href={itemOSLink}
+                  className="cursor-pointer text-accent-color"
+                >
+                  <Heading size="3" as="h2">
+                    {item.collection}
+                  </Heading>
+                </Link>
               </Flex>
             </Flex>
           </Dialog.Title>
@@ -58,10 +65,12 @@ const GalleryItemDialog = ({
 
 export default function GalleryItem({
   item,
+  itemOSLink,
   cardImage,
   dialogImage,
 }: {
   item: NFT;
+  itemOSLink: string;
   chain: string;
   cardImage: React.ReactNode;
   dialogImage: React.ReactNode;
@@ -91,7 +100,11 @@ export default function GalleryItem({
             </Flex>
           </Card>
         </Dialog.Trigger>
-        <GalleryItemDialog item={item} dialogImage={dialogImage} />
+        <GalleryItemDialog
+          item={item}
+          dialogImage={dialogImage}
+          itemOSLink={itemOSLink}
+        />
       </Dialog.Root>
     </Suspense>
   );

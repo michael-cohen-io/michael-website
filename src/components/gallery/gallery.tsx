@@ -91,10 +91,11 @@ export default async function Gallery({
   chain: string;
 }) {
   const nftResults = await fetchOwnedNFTs(accountAddress, chain);
+  const reversedNfts = nftResults.nfts.reverse();
   return (
     <ScrollArea scrollbars="vertical" style={{ height: "65vh" }}>
       <Grid columns="4" gap="2" justify="between">
-        {nftResults.nfts.map((nft) => {
+        {reversedNfts.map((nft) => {
           const itemOSLink = `https://opensea.io/assets/${chain}/${nft.contract}/${nft.identifier}`;
           const cardImage = <CardItemImage item={nft} />;
           const dialogImage = (
@@ -104,8 +105,8 @@ export default async function Gallery({
             <Suspense key={nft.identifier} fallback={<LoadingSpinner />}>
               <GalleryItem
                 item={nft}
-                chain={chain}
                 itemOSLink={itemOSLink}
+                chain={chain}
                 cardImage={cardImage}
                 dialogImage={dialogImage}
               />

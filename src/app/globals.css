@@ -122,6 +122,8 @@ body {
   overflow-y: auto;
   font-weight: 300 !important;
   border-radius: 1rem;
+  background: var(--color-page-background);
+  z-index: 99;
 
   p {
     font-size: 0.875rem;
