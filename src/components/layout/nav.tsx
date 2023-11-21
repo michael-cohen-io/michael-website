@@ -1,14 +1,13 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { init } from "next/dist/compiled/webpack/webpack";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import useScroll from "@/lib/hooks/use-scroll";
-import { HamburgerMenuIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button, Flex, IconButton, Tooltip } from "@radix-ui/themes";
 
+import ThemeButton from "../button/theme-button";
 import Heading from "../typography/heading";
 import { useMobileMenuContext } from "./mobile-nav";
 
@@ -28,7 +27,6 @@ function NavLink({ href, title }: { href: string; title: string }) {
 
 export default function Nav() {
   const scrolled = useScroll(50);
-  const { theme, setTheme } = useTheme();
   const mobileMenu = useMobileMenuContext();
 
   return (
@@ -68,14 +66,7 @@ export default function Nav() {
             <NavLink href="/skills" title="skills" />
             <NavLink href="/gallery" title="gallery" />
             <NavLink href="/contact" title="contact" />
-            <IconButton
-              radius="full"
-              variant="soft"
-              className="text-gray-500 hover:text-gray-700"
-              onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
-            >
-              {theme === "light" ? <MoonIcon /> : <SunIcon />}
-            </IconButton>
+            <ThemeButton />
           </Flex>
         </Flex>
         {/* Mobile Menu */}
@@ -94,14 +85,7 @@ export default function Nav() {
             </Heading>
           </Link>
           <Flex display={{ md: "none" }} align="center" gap="4" pr="4">
-            <IconButton
-              radius="full"
-              variant="soft"
-              className="text-gray-500 hover:text-gray-700"
-              onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
-            >
-              {theme === "light" ? <MoonIcon /> : <SunIcon />}
-            </IconButton>
+            <ThemeButton />
             <Tooltip content="Navigation">
               <IconButton
                 size="3"

@@ -1,12 +1,13 @@
 "use client";
 
-import { ThemeProvider, useTheme } from "next-themes";
+import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import ThemeButton from "@/components/button/theme-button";
 import { MobileMenu, MobileMenuProvider } from "@/components/layout/mobile-nav";
 import Heading from "@/components/typography/heading";
-import { HamburgerMenuIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button, Flex, IconButton, Link } from "@radix-ui/themes";
 
 function NavLink({ href, title }: { href: string; title: string }) {
@@ -34,8 +35,6 @@ function NavLink({ href, title }: { href: string; title: string }) {
 }
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  // TODO: doesnt do anything rn
-  const { theme, setTheme } = useTheme();
   return (
     <ThemeProvider attribute="class">
       <MobileMenuProvider>
@@ -56,14 +55,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
                 </Heading>
               </Link>
               <Flex display={{ md: "none" }} align="center" gap="4" pr="4">
-                <IconButton
-                  radius="full"
-                  variant="soft"
-                  className="text-gray-500 hover:text-gray-700"
-                  onClick={() => setTheme(theme !== "light" ? "light" : "dark")}
-                >
-                  {theme === "light" ? <MoonIcon /> : <SunIcon />}
-                </IconButton>
+                <ThemeButton />
                 <IconButton
                   size="3"
                   variant="ghost"
