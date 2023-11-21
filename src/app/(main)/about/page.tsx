@@ -11,7 +11,12 @@ export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
   return (
     <>
-      <Flex align="start" justify="between" className="max-w-screen-xl w-full">
+      <Flex
+        align="start"
+        justify="between"
+        direction={"row-reverse"}
+        className="max-w-screen-xl w-full"
+      >
         <Fade
           top
           duration={1000}
@@ -41,8 +46,8 @@ export default function About() {
             <Text size="2">
               Outside of my current role, I am a lifelong learner with an
               interest in building interesting and useful things. I&apos;m a
-              huge music & movie fan, a regular at any and all NYC shows, and a
-              novice snowboarder.
+              huge music & movie fan, a novice snowboarder, and sometimes I like
+              to pretend I&apos;m fashionable.
             </Text>
             <br />
             <StandardButton href="/work">
@@ -63,13 +68,22 @@ export default function About() {
           distance="30px"
           when={textRevealed}
         >
-          <Image
-            src="/profile.jpg"
-            alt="Michael Profile image"
-            width="400"
-            height="400"
-            className="grayscale mr-2 rounded-6 hover:grayscale-0 drop-shadow-2xl"
-          />
+          <div style={{ overflow: "hidden" }}>
+            <Image
+              src="/contact.jpeg"
+              alt="Michael Profile image"
+              width="400"
+              height="400"
+              style={{
+                maxHeight: "400px",
+                maxWidth: "400px",
+                objectFit: "cover",
+                objectPosition: "center top",
+              }}
+              objectFit="cover"
+              className="mr-2 rounded-6"
+            />
+          </div>
         </Fade>
       </Flex>
     </>
