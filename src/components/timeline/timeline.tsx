@@ -9,12 +9,15 @@ import {
 
 import WorkDialog from "@/components/dialog/work-dialog";
 import IconByName from "@/components/icons/icons";
+import useMediaQuery from "@/lib/hooks/use-media-query";
 import { formatDate } from "@/lib/utils";
 import { gray } from "@radix-ui/colors";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Box, Flex } from "@radix-ui/themes";
 
 function WorkItem({ workItem }: any) {
+  const { isMobile, isTablet } = useMediaQuery();
+  const mobileEnabled = isMobile || isTablet;
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
     background: backgroundColor,
@@ -39,7 +42,9 @@ function WorkItem({ workItem }: any) {
           borderRight: `7px solid ${backgroundColor}`,
         }}
         date={dateStr}
-        dateClassName="text-slate-500 font-light text-sm"
+        dateClassName={`font-light text-sm work-timeline--${
+          mobileEnabled ? "date-mobile" : "date"
+        }`}
         iconStyle={iconStyle}
         iconClassName="icon"
         icon={

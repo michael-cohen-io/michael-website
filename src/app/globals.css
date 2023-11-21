@@ -31,10 +31,6 @@ body {
 
 /* Timeline Item */
 .work-item {
-  .date {
-    color: var(--foreground-rgb) !important;
-  }
-
   .icon {
     display: block;
     width: 36px;
@@ -44,6 +40,14 @@ body {
     margin-left: 0px;
     margin-top: 0px;
   }
+}
+
+.work-timeline--date {
+  color: var(--slate-11) !important;
+}
+
+.work-timeline--mobile-date {
+  color: var(--white-a11) !important;
 }
 
 /* Call to Action Button */

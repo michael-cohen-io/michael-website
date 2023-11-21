@@ -7,7 +7,14 @@ export function TextWithLineBreaks({ text }: { text: string }) {
     <>
       {lines.map((line, index) => (
         <>
-          <Text as="p" className="text-sm" key={index} size="1" weight="light">
+          <Text
+            as="p"
+            className="text-sm"
+            key={index}
+            size="1"
+            weight="light"
+            color="gray"
+          >
             {line}
           </Text>
           <br />

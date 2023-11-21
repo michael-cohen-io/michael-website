@@ -54,7 +54,7 @@ const GalleryItemDialog = ({
               </Flex>
             </Flex>
           </Dialog.Title>
-          <Dialog.Description className="text-mauve11 mt-[10px] mx-8 mb-5 leading-normal">
+          <Dialog.Description className="mt-[10px] mx-8 mb-5 leading-normal">
             <TextWithLineBreaks text={item.description} />
           </Dialog.Description>
         </Dialog.Content>
