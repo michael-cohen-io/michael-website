@@ -13,6 +13,10 @@ export function shortRole(role: string) {
   return role.replace("Senior", "Sr.").trim();
 }
 
+export function shorten(str: string, length: number) {
+  return str.length > length ? str.slice(0, length) + "..." : str;
+}
+
 export function isDev(): boolean {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "development";
 }

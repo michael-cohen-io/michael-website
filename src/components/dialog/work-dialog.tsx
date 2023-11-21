@@ -5,26 +5,10 @@ import React from "react";
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Flex, Separator, Strong, Text } from "@radix-ui/themes";
+import { Flex, Separator, Strong } from "@radix-ui/themes";
 
 import Heading from "../typography/heading";
-
-const TextWithLineBreaks = ({ text }: { text: string }) => {
-  const lines = text.split("\\n");
-
-  return (
-    <>
-      {lines.map((line, index) => (
-        <>
-          <Text as="p" className="text-sm" key={index} size="1" weight="light">
-            {line}
-          </Text>
-          <br />
-        </>
-      ))}
-    </>
-  );
-};
+import { TextWithLineBreaks } from "../typography/text";
 
 export default function WorkDialog({
   workItem,

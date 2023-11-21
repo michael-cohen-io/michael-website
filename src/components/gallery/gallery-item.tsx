@@ -1,9 +1,12 @@
-import Image from "next/image";
-import { Suspense } from "react";
+"use client";
+import React, { Suspense } from "react";
 
-import { Box, Card, Flex, Inset, Link, Text } from "@radix-ui/themes";
+import { shorten } from "@/lib/utils";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
 
 import { LoadingSpinner } from "../loading";
+import { TextWithLineBreaks } from "../typography/text";
 
 export type NFT = {
   identifier: string;
@@ -20,48 +23,78 @@ export type NFT = {
   is_nsfw: true;
 };
 
-export default async function GalleryItem({
+const GalleryItemDialog = ({
   item,
-  chain,
+  dialogImage,
+}: {
+  item: NFT;
+  dialogImage: React.ReactNode;
+}) => {
+  return (
+    <Dialog.Portal>
+      <Dialog.Overlay className="DialogOverlay">
+        <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[90vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
+          {dialogImage}
+          <Dialog.Title className={`pt-6 px-8`}>
+            <Flex direction="column">
+              <Heading size="4" as="h1" weight="bold">
+                {item.name}
+              </Heading>
+              <Flex className="flex mb-4 items-center justify-between w-full">
+                <Heading size="3" as="h2">
+                  {item.collection}
+                </Heading>
+              </Flex>
+            </Flex>
+          </Dialog.Title>
+          <Dialog.Description className="text-mauve11 mt-[10px] mx-8 mb-5 leading-normal">
+            <TextWithLineBreaks text={item.description} />
+          </Dialog.Description>
+        </Dialog.Content>
+      </Dialog.Overlay>
+    </Dialog.Portal>
+  );
+};
+
+export default function GalleryItem({
+  item,
+  cardImage,
+  itemOSLink,
+  dialogImage,
 }: {
   item: NFT;
   chain: string;
+  itemOSLink: string;
+  cardImage: React.ReactNode;
+  dialogImage: React.ReactNode;
 }) {
   if (!item || !item.image_url) {
     return <></>;
   }
-  const itemOSLink = `https://opensea.io/assets/${chain}/${item.contract}/${item.identifier}`;
+
+  const tokenIdentification = `${item.collection} - ${item.identifier}`;
   return (
     <Suspense fallback={<LoadingSpinner />}>
-      <Card size="2" style={{ width: "20vw" }}>
-        <Inset clip="border-box" side="top" pb="current">
-          <Link href={itemOSLink} asChild>
-            <Image
-              src={item.image_url}
-              alt={item.collection}
-              width={350}
-              height={200}
-              style={{
-                width: "100%",
-                height: 140,
-                display: "block",
-                objectFit: "cover",
-                backgroundColor: "var(--gray-5)",
-              }}
-            />
-          </Link>
-        </Inset>
-        <Flex gap="4" align="center">
-          <Box>
-            <Link href={itemOSLink} size="3" weight="bold">
-              {item.name}
-            </Link>
-            <Text as="div" color="gray" size="2">
-              {item.collection} - {item.identifier}
-            </Text>
-          </Box>
-        </Flex>
-      </Card>
+      <Dialog.Root>
+        <Dialog.Trigger>
+          <Card size="2" style={{ width: "20vw" }}>
+            <Inset clip="border-box" side="top" pb="current">
+              {cardImage}
+            </Inset>
+            <Flex gap="4" align="center">
+              <Box>
+                <Text size="3" weight="bold">
+                  {shorten(item.name ? item.name : tokenIdentification, 20)}
+                </Text>
+                <Text as="div" color="gray" size="2">
+                  {shorten(item.name ? tokenIdentification : "OpenSea", 20)}
+                </Text>
+              </Box>
+            </Flex>
+          </Card>
+        </Dialog.Trigger>
+        <GalleryItemDialog item={item} dialogImage={dialogImage} />
+      </Dialog.Root>
     </Suspense>
   );
 }

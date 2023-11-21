@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Suspense } from "react";
 
 import { Grid, ScrollArea } from "@radix-ui/themes";
@@ -37,6 +39,50 @@ async function fetchOwnedNFTs(
   return res.json();
 }
 
+const CardItemImage = ({ item }: { item: NFT }) => {
+  return (
+    <Image
+      src={item.image_url}
+      alt={item.collection}
+      width={300}
+      height={200}
+      style={{
+        width: "100%",
+        height: 200,
+        display: "block",
+        objectFit: "cover",
+        backgroundColor: "var(--gray-5)",
+      }}
+    />
+  );
+};
+
+const DialogItemImage = ({
+  item,
+  itemOSLink,
+}: {
+  item: NFT;
+  itemOSLink: string;
+}) => {
+  return (
+    <Link href={itemOSLink}>
+      <Image
+        src={item.image_url}
+        alt={item.collection}
+        width={400}
+        height={300}
+        style={{
+          width: "100%",
+          height: 400,
+          display: "block",
+          objectFit: "cover",
+          backgroundColor: "var(--gray-5)",
+        }}
+      />
+    </Link>
+  );
+};
+
 export default async function Gallery({
   accountAddress,
   chain,
@@ -48,11 +94,24 @@ export default async function Gallery({
   return (
     <ScrollArea scrollbars="vertical" style={{ height: "65vh" }}>
       <Grid columns="4" gap="2" justify="between">
-        {nftResults.nfts.map((nft) => (
-          <Suspense key={nft.identifier} fallback={<LoadingSpinner />}>
-            <GalleryItem item={nft} chain={chain} />
-          </Suspense>
-        ))}
+        {nftResults.nfts.map((nft) => {
+          const itemOSLink = `https://opensea.io/assets/${chain}/${nft.contract}/${nft.identifier}`;
+          const cardImage = <CardItemImage item={nft} />;
+          const dialogImage = (
+            <DialogItemImage item={nft} itemOSLink={itemOSLink} />
+          );
+          return (
+            <Suspense key={nft.identifier} fallback={<LoadingSpinner />}>
+              <GalleryItem
+                item={nft}
+                chain={chain}
+                itemOSLink={itemOSLink}
+                cardImage={cardImage}
+                dialogImage={dialogImage}
+              />
+            </Suspense>
+          );
+        })}
       </Grid>
     </ScrollArea>
   );
