@@ -84,7 +84,7 @@ export default function GalleryItem({
     <Suspense fallback={<LoadingSpinner />}>
       <Dialog.Root>
         <Dialog.Trigger>
-          <Card size="2" style={{ width: "20vw" }}>
+          <Card size="2" style={{ width: "20vw" }} className="GalleryCard">
             <Inset clip="border-box" side="top" pb="current">
               {cardImage}
             </Inset>
