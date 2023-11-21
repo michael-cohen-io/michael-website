@@ -95,7 +95,7 @@ function TabContent({
 }) {
   return (
     <RTabs.Content value={tabValue}>
-      <Grid columns="4" gap="4" justify="between">
+      <Grid columns={{ initial: "2", md: "4" }} gap="4" justify="between">
         {tabItems.map((item) => (
           <SkillCard key={item.id} {...item} />
         ))}
@@ -134,7 +134,7 @@ function MobileTabTrigger({
     <RTabs.Trigger key={tabId} value={tabId} asChild>
       <Flex
         direction="column"
-        px={{ initial: "0", md: "4" }}
+        mx={{ initial: "0", md: "4" }}
         mb={{ initial: "2", md: "0" }}
         className="bg-white h-[10vh] justify-center select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color data-[state=active]:border-r-8  data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none data-[state=active]:relative"
       >
@@ -159,7 +159,11 @@ export default function Tabs({
       orientation="vertical"
     >
       <RTabs.List className="md:shrink-0 flex border-r border-slate6">
-        <Flex direction="column">
+        <Flex
+          direction="column"
+          width="100%"
+          className="min-w-[30vw] md:min-w-0"
+        >
           {Object.keys(tabIdToName).map((tabId) =>
             isMobile ? (
               <MobileTabTrigger
