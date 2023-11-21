@@ -42,7 +42,7 @@ export default function Nav() {
         <Flex
           height="max-content"
           width="100%"
-          display={{ initial: "none", sm: "none", md: "flex" }}
+          display={{ initial: "none", md: "flex" }}
           mx="9"
           px="6"
           py="4"
@@ -56,7 +56,7 @@ export default function Nav() {
           </Link>
 
           <Flex
-            display={{ initial: "none", sm: "none", md: "flex" }}
+            display={{ initial: "none", md: "flex" }}
             gap="4"
             align="center"
           >
@@ -73,7 +73,7 @@ export default function Nav() {
         <Flex
           height="max-content"
           width="100%"
-          display={{ sm: "flex", md: "none" }}
+          display={{ initial: "flex", md: "none" }}
           px="4"
           py="4"
           align="center"

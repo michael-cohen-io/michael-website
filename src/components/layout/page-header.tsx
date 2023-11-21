@@ -14,7 +14,10 @@ export default function PageHeader({
 }) {
   return title ? (
     <>
-      <Flex mt="8" className={`${hidden ? "invisible" : ""}`}>
+      <Flex
+        mt={{ xs: "0", md: "8" }}
+        className={`${hidden ? "invisible" : ""}`}
+      >
         <div className={`w-full px-1 xl:px-0 ${hidden ? "invisible" : ""}`}>
           <Heading className="text-center font-light" size="8">
             {capitalize(title)}

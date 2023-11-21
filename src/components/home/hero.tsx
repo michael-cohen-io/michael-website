@@ -7,18 +7,22 @@ import Fade from "react-reveal/Fade";
 import Typist from "react-typist";
 
 import { isDev } from "@/lib/utils";
-import { Code, Flex, Grid, Strong } from "@radix-ui/themes";
+import { Code, Flex, Grid, Heading, Strong } from "@radix-ui/themes";
 
 import PageHeader from "../layout/page-header";
-import Heading from "../typography/heading";
 
 const firstTextBlock = (
-  <Code weight="bold" variant="soft" size="9">
+  <Code weight="bold" variant="soft" size={{ initial: "8", md: "9" }}>
     hello, world.
   </Code>
 );
 const secondTextBlock = (
-  <Heading className="text-left font-thin text-4xl ml-4 mt-4">
+  <Heading
+    className="text-left font-thin mt-4"
+    ml={{ initial: "2", md: "4" }}
+    weight="light"
+    size={{ initial: "4", md: "6" }}
+  >
     My name is{" "}
     <Link href="/about" className="text-accent-color">
       <Strong>Michael Cohen</Strong>
@@ -27,7 +31,12 @@ const secondTextBlock = (
   </Heading>
 );
 const thirdTextBlock = (
-  <Heading className="text-left font-thin text-4xl ml-4">
+  <Heading
+    className="text-left font-thin"
+    ml={{ initial: "2", md: "4" }}
+    weight="light"
+    size={{ initial: "4", md: "6" }}
+  >
     I&apos;m a software engineer.
   </Heading>
 );
@@ -89,8 +98,20 @@ export default function Hero() {
   return (
     <>
       <PageHeader title="Hero" hidden />
-      <Grid columns="2" width="100%" justify="between" mt="6">
-        <Flex direction="column" justify="start" width="max-content">
+      <Grid
+        columns="2"
+        width="100%"
+        justify="between"
+        mt={{ initial: "8", xs: "0", md: "6" }}
+        pt={{ initial: "4", xs: "0" }}
+      >
+        <Flex
+          direction="column"
+          justify="start"
+          width="max-content"
+          align="start"
+          mt={{ initial: "9", xs: "0" }}
+        >
           {showTyping ? firstTypingBlock(onTypingDone) : firstTextBlock}
           {showTyping
             ? secondTypingBlock(typeCounter, onTypingDone)
@@ -99,7 +120,7 @@ export default function Hero() {
             ? thirdTypingBlock(typeCounter, onTypingDone)
             : thirdTextBlock}
         </Flex>
-        <Flex justify="end">
+        <Flex justify="end" display={{ initial: "none", xs: "flex" }}>
           <Fade
             right={true}
             bottom={false}
@@ -110,6 +131,11 @@ export default function Hero() {
             <Image
               src="/profile.jpg"
               alt="Michael Profile image"
+              sizes="30vw, (max-width: 768px) 400px"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
               width="400"
               height="400"
               className="grayscale mr-2 rounded-6 hover:grayscale-0 drop-shadow-2xl align-bottom"

@@ -44,7 +44,7 @@ function MobileMenuContent() {
     <Flex direction="column">
       <Flex
         width="100%"
-        display={{ sm: "flex", md: "none" }}
+        display={{ initial: "flex", md: "none" }}
         px="4"
         py="4"
         justify="between"
