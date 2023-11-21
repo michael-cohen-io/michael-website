@@ -16,7 +16,7 @@ import {
   Text,
 } from "@radix-ui/themes";
 
-export default function About() {
+export default function ContactPage() {
   return (
     <>
       <Flex direction="column" align="center" width="100%">

@@ -56,7 +56,6 @@ export default function Nav() {
             <NavLink href="/about" title="about" />
             <NavLink href="/work" title="work" />
             <NavLink href="/skills" title="skills" />
-            <NavLink href="/projects" title="projects" />
             <NavLink href="/gallery" title="gallery" />
             <NavLink href="/contact" title="contact" />
             <IconButton

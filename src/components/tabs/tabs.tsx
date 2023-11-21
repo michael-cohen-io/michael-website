@@ -12,6 +12,7 @@ import {
   Heading,
   HoverCard,
   Inset,
+  ScrollArea,
   Text,
 } from "@radix-ui/themes";
 
@@ -111,7 +112,7 @@ export default function Tabs({
 }) {
   return (
     <RTabs.Root
-      className="flex min-w-[80vw] shadow-3 shadow-blackA2 min-h-[60vh]"
+      className="flex min-w-[80vw] shadow-3 shadow-blackA2 min-h-[65vh]"
       defaultValue={"0"}
       orientation="vertical"
     >
@@ -128,16 +129,21 @@ export default function Tabs({
           ))}
         </Flex>
       </RTabs.List>
-
-      <Flex px="8" pt="8" pb="2" justify="center">
-        {Object.keys(tabDictionary).map((tabId) => (
-          <TabContent
-            key={tabId}
-            tabValue={tabId}
-            tabItems={tabDictionary[tabId]}
-          />
-        ))}
-      </Flex>
+      <ScrollArea
+        type="always"
+        scrollbars="vertical"
+        style={{ height: "65vh" }}
+      >
+        <Flex px="8" pt="8" pb="2" justify="center">
+          {Object.keys(tabDictionary).map((tabId) => (
+            <TabContent
+              key={tabId}
+              tabValue={tabId}
+              tabItems={tabDictionary[tabId]}
+            />
+          ))}
+        </Flex>
+      </ScrollArea>
     </RTabs.Root>
   );
 }

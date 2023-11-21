@@ -21,9 +21,11 @@ import RiStackFill from "@meronex/icons/ri/RiStackFill";
 import {
   SiAndroid,
   SiDjango,
+  SiElixir,
   SiFirebase,
   SiFlutter,
   SiGatsby,
+  SiGo,
   SiGraphql,
   SiNextDotJs,
   SiReact,
@@ -65,6 +67,8 @@ const IconName = {
   CRYPTO: "CRYPTO",
   TYPESCRIPT: "TYPESCRIPT",
   MOBILE: "MOBILE",
+  GO: "GO",
+  ELIXIR: "ELIXIR",
 };
 
 export default function IconByName({
@@ -109,6 +113,11 @@ export default function IconByName({
       return <SiDjango size={size} color={color} className={className} />;
     case IconName.NEXTJS:
       return <SiNextDotJs size={size} color={color} className={className} />;
+    case IconName.ELIXIR:
+      return <SiElixir size={size} color={color} className={className} />;
+    case IconName.GO:
+      return <SiGo size={size} color={color} className={className} />;
+
     case IconName.NOSQL:
       return (
         <MdcFileDocumentOutline
