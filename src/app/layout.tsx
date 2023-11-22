@@ -8,6 +8,7 @@ import React, { Suspense } from "react";
 import Footer from "@/components/layout/footer";
 import Nav from "@/components/layout/nav";
 import { Container, Theme } from "@radix-ui/themes";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Providers } from "./providers";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
             </main>
           </Theme>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
