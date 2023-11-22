@@ -31,7 +31,7 @@ function SkillCard(item: SkillWithSection) {
   const [hovered, setHovered] = useState(false);
   const { isMobile } = useMediaQuery();
   return (
-    <HoverCard.Root>
+    <HoverCard.Root open={hovered}>
       <HoverCard.Trigger>
         <Card
           size="1"
@@ -41,7 +41,10 @@ function SkillCard(item: SkillWithSection) {
           variant="classic"
           onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}
-          onClick={() => setHovered(!hovered)}
+          onClick={() => {
+            console.log("clicked, currently set to", hovered);
+            setHovered(!hovered);
+          }}
           style={{
             maxWidth: "24vw",
             minWidth: "12vw",
@@ -194,8 +197,7 @@ export default function Tabs({
         style={{ height: `${isMobile ? "75vh" : "70vh"}` }}
       >
         <Flex
-          px={{ md: "8" }}
-          pl={{ initial: "4", md: "0" }}
+          px={{ initial: "4", md: "8" }}
           pt={{ md: "8" }}
           pb="2"
           justify="center"
