@@ -1,4 +1,4 @@
-@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/pink.css";
 
 @tailwind base;
 @tailwind components;
@@ -43,7 +43,7 @@ body {
 }
 
 .work-timeline--date {
-  color: var(--slate-11) !important;
+  color: var(--mauve-11) !important;
 }
 
 .work-timeline--mobile-date {

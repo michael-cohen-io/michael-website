@@ -166,7 +166,7 @@ export default function Tabs({
       defaultValue={"0"}
       orientation="vertical"
     >
-      <RTabs.List className="md:shrink-0 flex border-r border-slate6">
+      <RTabs.List className="md:shrink-0 flex border-r border-mauve6">
         <Flex
           direction="column"
           width="100%"

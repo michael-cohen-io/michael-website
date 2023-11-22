@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <body>
         <Providers>
-          <Theme accentColor="blue" panelBackground="solid" scaling="100%">
+          <Theme accentColor="pink" panelBackground="solid" scaling="100%">
             <Suspense
               fallback={
                 <div className="fixed top-0 w-full flex justify-center">

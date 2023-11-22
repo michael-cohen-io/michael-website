@@ -17,28 +17,7 @@ const config: Config = {
       mono: ['"Roboto Mono"'],
     },
     colors: {
-      "accent-color": "#3b82f6",
-      blue: {
-        50: "#eff6ff",
-        100: "#dbeafe",
-        200: "#bfdbfe",
-        300: "#93c5fd",
-        400: "#60a5fa",
-        500: "#3b82f6",
-        600: "#2563eb",
-        700: "#1d4ed8",
-        800: "#1e40af",
-      },
-      slate: {
-        50: "#f8fafc",
-        300: "#cbd5e1",
-        400: "#94a3b8",
-        500: "#64748b",
-        600: "#475569",
-        700: "#334155",
-        800: "#1e293b",
-        900: "#0f172a",
-      },
+      "accent-color": "#FF88C7",
     },
     extend: {
       colors: {

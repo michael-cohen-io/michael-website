@@ -27,7 +27,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
           <Heading
             size="3"
             align="center"
-            color={isActive ? "blue" : "gray"}
+            color={isActive ? "pink" : "gray"}
             weight="medium"
           >
             {title}
@@ -51,7 +51,7 @@ function MobileMenuContent() {
         align="center"
       >
         <Link href="/" className="flex items-center text-3xl select-none">
-          <Heading color="blue" size="7" weight="regular">
+          <Heading color="pink" size="7" weight="regular">
             {"<MC>"}
           </Heading>
         </Link>

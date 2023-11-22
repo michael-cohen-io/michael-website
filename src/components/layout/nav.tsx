@@ -17,7 +17,7 @@ function NavLink({ href, title }: { href: string; title: string }) {
   return (
     <Button variant="ghost" radius="full">
       <Link href={href} className={`link ${isActive ? "active" : ""}`}>
-        <Heading size="3" align="center" color={isActive ? "blue" : "gray"}>
+        <Heading size="3" align="center" color={isActive ? "pink" : "gray"}>
           {title}
         </Heading>
       </Link>
@@ -53,7 +53,7 @@ export default function Nav() {
             href="/"
             className="flex items-center font-light text-3xl select-none"
           >
-            <Heading color="blue" size="7">
+            <Heading color="pink" size="7">
               {"<MC>"}
             </Heading>
           </Link>
@@ -83,7 +83,7 @@ export default function Nav() {
           justify="between"
         >
           <Link href="/" className="flex items-center text-3xl select-none">
-            <Heading color="blue" size="7" weight="regular">
+            <Heading color="pink" size="7" weight="regular">
               {"<MC>"}
             </Heading>
           </Link>
