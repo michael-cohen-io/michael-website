@@ -30,12 +30,12 @@ export default function WorkDialog({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay">
-          <Dialog.Content className="DialogContent bg-slate-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
+          <Dialog.Content className="DialogContent bg-mauve-50 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] focus:outline-none">
             <Dialog.Title
               style={{
                 backgroundColor: workItem.iconColor || "",
               }}
-              className={`text-slate-50 pt-6 px-8`}
+              className={`text-mauve-50 pt-6 px-8`}
             >
               <Flex direction="column">
                 <Heading size="4" as="h1">
