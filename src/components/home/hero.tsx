@@ -25,7 +25,7 @@ const secondTextBlock = (
   >
     My name is{" "}
     <Link href="/about" className="text-accent-color">
-      <Strong>Michael Cohen</Strong>
+      <Strong className="hover:underline">Michael Cohen</Strong>
     </Link>
     .
   </Heading>
