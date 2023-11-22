@@ -158,7 +158,7 @@ export default function Tabs({
   const { isMobile } = useMediaQuery();
   return (
     <RTabs.Root
-      className="flex min-w-[80vw] md:shadow-3 shadow-blackA2 min-h-[75vh] md:min-h-[65vh]"
+      className="flex min-w-[80vw] md:shadow-3 shadow-blackA2 min-h-[75vh] md:min-h-[70vh]"
       defaultValue={"0"}
       orientation="vertical"
     >
@@ -187,7 +187,7 @@ export default function Tabs({
       </RTabs.List>
       <ScrollArea
         scrollbars="vertical"
-        style={{ height: `${isMobile ? "75vh" : "65vh"}` }}
+        style={{ height: `${isMobile ? "75vh" : "70vh"}` }}
       >
         <Flex
           px={{ md: "8" }}

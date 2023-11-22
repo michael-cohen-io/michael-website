@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense } from "react";
 
+import useMediaQuery from "@/lib/hooks/use-media-query";
 import { shorten } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
@@ -75,6 +76,7 @@ export default function GalleryItem({
   cardImage: React.ReactNode;
   dialogImage: React.ReactNode;
 }) {
+  const { isMobile } = useMediaQuery();
   if (!item || !item.image_url) {
     return <></>;
   }
@@ -84,7 +86,11 @@ export default function GalleryItem({
     <Suspense fallback={<LoadingSpinner />}>
       <Dialog.Root>
         <Dialog.Trigger>
-          <Card size="2" style={{ width: "20vw" }} className="GalleryCard">
+          <Card
+            size="2"
+            style={{ width: `${isMobile ? "40vw" : "20vw"}` }}
+            className="GalleryCard"
+          >
             <Inset clip="border-box" side="top" pb="current">
               {cardImage}
             </Inset>

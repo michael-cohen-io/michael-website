@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import Gallery from "@/components/gallery/gallery";
+import NftGallery from "@/components/gallery/nft-gallery";
 import { LoadingSpinner } from "@/components/loading";
 
 export default function GalleryPage() {
@@ -14,7 +14,7 @@ export default function GalleryPage() {
             </div>
           }
         >
-          <Gallery
+          <NftGallery
             accountAddress="0xb9720BE63Ea8896956A06d2dEd491De125fD705E"
             chain="ethereum"
           />
