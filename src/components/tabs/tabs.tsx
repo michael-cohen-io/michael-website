@@ -29,15 +29,19 @@ export type TabIdToName = {
 
 function SkillCard(item: SkillWithSection) {
   const [hovered, setHovered] = useState(false);
+  const { isMobile } = useMediaQuery();
   return (
     <HoverCard.Root>
       <HoverCard.Trigger>
         <Card
           size="1"
-          className="hover:shadow-3 cursor-pointer GalleryCard"
+          className={`hover:shadow-3 cursor-pointer ${
+            isMobile ? "" : "GalleryCard"
+          }`}
           variant="classic"
           onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}
+          onClick={() => setHovered(!hovered)}
           style={{
             maxWidth: "24vw",
             minWidth: "12vw",
