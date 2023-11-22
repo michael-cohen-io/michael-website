@@ -117,7 +117,7 @@ function DefaultTabTrigger({
         px={{ initial: "0", md: "4" }}
         className="bg-white h-[45px] flex-1 flex items-center justify-center leading-none select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color hover:focus:shadow-black data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none cursor-pointer data-[state=active]:shadow-4 data-[state=active]:relative"
       >
-        <Text size={{ initial: "1", md: "3" }}>{tabName.toUpperCase()}</Text>
+        <Text size={{ initial: "1", md: "3" }}>{tabName.toLowerCase()}</Text>
       </Flex>
     </RTabs.Trigger>
   );
@@ -138,7 +138,7 @@ function MobileTabTrigger({
         mb={{ initial: "2", md: "0" }}
         className="bg-white h-[10vh] justify-center select-none first:rounded-tl-md last:rounded-tr-md hover:text-accent-color data-[state=active]:border-r-8  data-[state=active]:text-accent-color data-[state=active]:font-bold outline-none data-[state=active]:relative"
       >
-        <Text size={{ initial: "1", md: "3" }}>{tabName.toUpperCase()}</Text>
+        <Text size={{ initial: "1", md: "3" }}>{tabName.toLowerCase()}</Text>
       </Flex>
     </RTabs.Trigger>
   );
@@ -154,7 +154,7 @@ export default function Tabs({
   const { isMobile } = useMediaQuery();
   return (
     <RTabs.Root
-      className="flex min-w-[80vw] md:shadow-3 shadow-blackA2 min-h-[65vh]"
+      className="flex min-w-[80vw] md:shadow-3 shadow-blackA2 min-h-[75vh] md:min-h-[65vh]"
       defaultValue={"0"}
       orientation="vertical"
     >
@@ -181,8 +181,18 @@ export default function Tabs({
           )}
         </Flex>
       </RTabs.List>
-      <ScrollArea scrollbars="vertical" style={{ height: "65vh" }}>
-        <Flex px="8" pt="8" pb="2" justify="center">
+      <ScrollArea
+        scrollbars="vertical"
+        style={{ height: `${isMobile ? "75vh" : "65vh"}` }}
+      >
+        <Flex
+          px={{ md: "8" }}
+          pl={{ initial: "4", md: "0" }}
+          pr={{ initial: "4", md: "0" }}
+          pt={{ md: "8" }}
+          pb="2"
+          justify="center"
+        >
           {Object.keys(tabDictionary).map((tabId) => (
             <TabContent
               key={tabId}
