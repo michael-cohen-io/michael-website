@@ -5,9 +5,8 @@ import React from "react";
 import { WorkWithCompany } from "@/lib/prisma";
 import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Flex, Separator, Strong } from "@radix-ui/themes";
+import { Flex, Heading, Separator, Strong } from "@radix-ui/themes";
 
-import Heading from "../typography/heading";
 import { TextWithLineBreaks } from "../typography/text";
 
 export default function WorkDialog({
@@ -19,11 +18,19 @@ export default function WorkDialog({
     <>
       <Dialog.Trigger asChild>
         <div>
-          <Heading className="vertical-timeline-element-title" size="4">
+          <Heading
+            className="vertical-timeline-element-title"
+            size="4"
+            weight="light"
+          >
             <Strong>{workItem.company.name}</Strong> |{" "}
             {shortRole(workItem.role)}
           </Heading>
-          <Heading className="vertical-timeline-element-subtitle" size="3">
+          <Heading
+            className="vertical-timeline-element-subtitle"
+            size="3"
+            weight="light"
+          >
             {workItem.team}
           </Heading>
         </div>
@@ -35,9 +42,9 @@ export default function WorkDialog({
               style={{
                 backgroundColor: workItem.iconColor || "",
               }}
-              className={`text-mauve-50 pt-6 px-8`}
+              className={`pt-6 px-8`}
             >
-              <Flex direction="column">
+              <Flex direction="column" style={{ color: "#fff" }}>
                 <Heading size="4" as="h1">
                   {workItem.company.name}
                 </Heading>

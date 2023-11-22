@@ -91,7 +91,6 @@ export default async function NftGallery({
 }) {
   const nftResults = await fetchOwnedNFTs(accountAddress, chain);
   const reversedNfts = nftResults.nfts.reverse();
-  console.log("reversedNfts", reversedNfts);
   return (
     <Gallery>
       {reversedNfts.map((nft) => {

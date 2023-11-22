@@ -34,7 +34,7 @@ function WorkItem({ workItem }: any) {
         contentStyle={{
           boxShadow: "none",
           background: backgroundColor,
-          color: "#fff",
+          color: "var(--white-a12)",
           borderRadius: "var(--radius-3)",
         }}
         contentArrowStyle={{

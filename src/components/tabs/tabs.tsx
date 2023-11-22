@@ -42,7 +42,6 @@ function SkillCard(item: SkillWithSection) {
           onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}
           onClick={() => {
-            console.log("clicked, currently set to", hovered);
             setHovered(!hovered);
           }}
           style={{
