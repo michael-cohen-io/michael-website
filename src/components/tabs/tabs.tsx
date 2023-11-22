@@ -95,7 +95,11 @@ function TabContent({
 }) {
   return (
     <RTabs.Content value={tabValue}>
-      <Grid columns={{ initial: "2", md: "4" }} gap="4" justify="between">
+      <Grid
+        columns={{ initial: "2", md: "4" }}
+        gap={{ initial: "2", md: "4" }}
+        justify="between"
+      >
         {tabItems.map((item) => (
           <SkillCard key={item.id} {...item} />
         ))}
@@ -188,7 +192,6 @@ export default function Tabs({
         <Flex
           px={{ md: "8" }}
           pl={{ initial: "4", md: "0" }}
-          pr={{ initial: "4", md: "0" }}
           pt={{ md: "8" }}
           pb="2"
           justify="center"
