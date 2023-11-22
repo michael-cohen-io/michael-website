@@ -23,8 +23,12 @@ export default function ContactPage() {
         <Heading size="5" as="h3" mb="4" weight="light">
           Wanna chat? <Strong>Hit my line</Strong>
         </Heading>
-        <Card size="3" style={{ width: 500 }}>
-          <Flex gap="4" align="center">
+        <Card size="3" className="md:min-w-[450px]">
+          <Flex
+            gap="4"
+            align="center"
+            direction={{ initial: "column", sm: "row" }}
+          >
             <Avatar
               src="/memoji.png"
               fallback="MC"
@@ -33,10 +37,19 @@ export default function ContactPage() {
               color="indigo"
             />
             <Box>
-              <Text as="div" size="6" weight="bold">
+              <Text
+                as="div"
+                size="6"
+                weight="bold"
+                align={{ initial: "center", sm: "left" }}
+              >
                 Michael Cohen
               </Text>
-              <Text as="div" color="gray">
+              <Text
+                as="div"
+                color="gray"
+                align={{ initial: "center", sm: "left" }}
+              >
                 Engineering
               </Text>
               <Flex direction="column">
