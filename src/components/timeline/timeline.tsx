@@ -15,7 +15,7 @@ import { gray } from "@radix-ui/colors";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Box, Flex } from "@radix-ui/themes";
 
-function WorkItem({ workItem }: any) {
+function WorkItem({ workItem, workItemDescriptionComponent }: any) {
   const { isMobile } = useMediaQuery();
   const backgroundColor = workItem.iconColor || "#3b82f6";
   const iconStyle = {
@@ -57,18 +57,35 @@ function WorkItem({ workItem }: any) {
         }
         visible={true}
       >
-        <WorkDialog workItem={workItem} />
+        <WorkDialog
+          workItem={workItem}
+          workItemDescriptionComponent={workItemDescriptionComponent}
+        />
       </VerticalTimelineElement>
     </Dialog.Root>
   );
 }
 
-export default function WorkTimeline({ workData }: { workData: any[] }) {
+export default function WorkTimeline({
+  workData,
+  workItemDescriptionComponentMap,
+}: {
+  workData: any[];
+  workItemDescriptionComponentMap: any;
+}) {
   return (
     <VerticalTimeline lineColor={gray.gray6}>
-      {workData.map((work: any) => (
-        <WorkItem key={work.id} workItem={work} />
-      ))}
+      {workData.map((work: any) => {
+        const workItemDescriptionComponent =
+          workItemDescriptionComponentMap[work.id];
+        return (
+          <WorkItem
+            key={work.id}
+            workItem={work}
+            workItemDescriptionComponent={workItemDescriptionComponent}
+          />
+        );
+      })}
     </VerticalTimeline>
   );
 }

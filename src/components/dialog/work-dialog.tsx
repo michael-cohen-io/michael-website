@@ -7,12 +7,12 @@ import { formatDate, shortRole } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Flex, Heading, Separator, Strong } from "@radix-ui/themes";
 
-import { TextWithLineBreaks } from "../typography/text";
-
 export default function WorkDialog({
   workItem,
+  workItemDescriptionComponent,
 }: {
   workItem: WorkWithCompany;
+  workItemDescriptionComponent: React.ReactNode;
 }) {
   return (
     <>
@@ -75,7 +75,7 @@ export default function WorkDialog({
                 justify="start"
                 className="mt-[10px] mx-8 mb-5 leading-normal"
               >
-                <TextWithLineBreaks text={workItem.description} />
+                {workItemDescriptionComponent}
               </Flex>
             </Dialog.Description>
           </Dialog.Content>

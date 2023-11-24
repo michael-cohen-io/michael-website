@@ -1,6 +1,7 @@
 import { Text } from "@radix-ui/themes";
 
-export function TextWithLineBreaks({ text }: { text: string }) {
+export default function TextWithLineBreaks({ text }: { text: string }) {
+  console.log(text);
   const lines = text.split("\\n");
 
   return (
