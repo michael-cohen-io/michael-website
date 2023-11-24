@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 
 import { InvertedButton, StandardButton } from "@/components/button/button";
 import useMediaQuery from "@/lib/hooks/use-media-query";
-import { Flex, Text } from "@radix-ui/themes";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { Flex, Grid, Strong, Text } from "@radix-ui/themes";
 
 export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
@@ -30,14 +32,65 @@ export default function About() {
             direction="column"
             className="z-10 w-full max-w-lg px-1 xl:px-0 font-light text-sm"
           >
-            <Text size="2">
-              Shalom! I&apos;m a software developer based out of Brooklyn, NY. I
-              currently work as the Engineering Manager for the Creator team at
-              OpenSea.
+            <Text size="4">
+              Shalom! I&apos;m a{" "}
+              <Strong>
+                <Link
+                  className="text-accent-color hover:underline"
+                  href="/work"
+                >
+                  software developer
+                </Link>
+              </Strong>{" "}
+              based out of Brooklyn, NY.
             </Text>
             <br />
             <Text size="2">
-              Our team is dedicated to furnishing top-tier tools tailored for
+              I am a:
+              <Flex gap="2">
+                <ArrowRightIcon />
+                full-stack engineer,
+              </Flex>
+              <Flex gap="2">
+                <ArrowRightIcon />a web3 developer,
+              </Flex>
+              <Flex gap="2">
+                <ArrowRightIcon />
+                an engineering leader,
+              </Flex>
+              <Flex gap="2">
+                <ArrowRightIcon />I{" "}
+                <Strong>
+                  <Link
+                    className="text-accent-color hover:underline"
+                    href="/contact"
+                  >
+                    freelance & consult
+                  </Link>
+                </Strong>
+                ,
+              </Flex>
+              <Flex gap="2">
+                <ArrowRightIcon />
+                sometimes I design things,
+              </Flex>
+              <Flex gap="2">
+                <ArrowRightIcon />
+                and I&apos;m available for hire.
+              </Flex>
+            </Text>
+            <br />
+            <Text size="2">
+              I currently work as the Engineering Manager for the Creator team
+              at{" "}
+              <Text color="blue">
+                <Strong>
+                  <Link href="https://opensea.io/" className="hover:underline">
+                    OpenSea
+                  </Link>
+                </Strong>
+              </Text>
+              . Our team is dedicated to furnishing top-tier tools tailored for
               creators, all available conveniently and safely within
               OpenSea&apos;s Creator Studio. We aim to be the most trusted and
               versatile tool for any crypto-curious creators who are looking to
@@ -48,8 +101,8 @@ export default function About() {
             <Text size="2">
               Outside of my current role, I am a lifelong learner with an
               interest in building interesting and useful things. I&apos;m a
-              huge music & movie fan, a novice snowboarder, and sometimes I like
-              to pretend I&apos;m fashionable.
+              huge music fan, an amateur cook, a novice snowboarder, and
+              sometimes I pretend to be fashionable.
             </Text>
             <br />
             <Flex
