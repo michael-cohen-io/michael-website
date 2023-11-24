@@ -6,7 +6,7 @@ import { Roboto_Mono } from "next/font/google";
 import React, { Suspense } from "react";
 
 import Footer from "@/components/layout/footer";
-import Nav from "@/components/layout/nav";
+import Nav from "@/components/nav/nav";
 import { Container, Theme } from "@radix-ui/themes";
 import { Analytics } from "@vercel/analytics/react";
 

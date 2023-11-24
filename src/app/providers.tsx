@@ -9,7 +9,8 @@ import {
   MobileMenu,
   MobileMenuProvider,
   useMobileMenuContext,
-} from "@/components/layout/mobile-nav";
+} from "@/components/nav/mobile-nav";
+import NavItems from "@/components/nav/nav-items";
 import Heading from "@/components/typography/heading";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button, Flex, IconButton, Link } from "@radix-ui/themes";
@@ -77,12 +78,7 @@ function MobileMenuContent() {
         width="100%"
         px="4"
       >
-        <NavLink href="/" title="home" />
-        <NavLink href="/about" title="about" />
-        <NavLink href="/work" title="work" />
-        <NavLink href="/skills" title="skills" />
-        <NavLink href="/gallery" title="gallery" />
-        <NavLink href="/contact" title="contact" />
+        <NavItems NavLinkComponent={NavLink} />
       </Flex>
     </Flex>
   );

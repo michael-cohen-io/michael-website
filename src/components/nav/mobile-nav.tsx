@@ -1,4 +1,3 @@
-// import { useRouter } from "next/router";
 import React from "react";
 import { RemoveScroll } from "react-remove-scroll";
 
@@ -17,25 +16,6 @@ export const MobileMenuProvider = ({
   children: React.ReactNode;
 }) => {
   const [open, setOpen] = React.useState(false);
-
-  //   const router = useRouter();
-
-  //   React.useEffect(() => {
-  //     const handleRouteChangeStart = () => {
-  //       // Dismiss mobile keyboard if focusing an input (e.g. when searching)
-  //       if (document.activeElement instanceof HTMLInputElement) {
-  //         document.activeElement.blur();
-  //       }
-
-  //       setOpen(false);
-  //     };
-
-  //     router.events.on("routeChangeStart", handleRouteChangeStart);
-
-  //     return () => {
-  //       router.events.off("routeChangeStart", handleRouteChangeStart);
-  //     };
-  //   }, []);
 
   React.useEffect(() => {
     // Match @media (--md)

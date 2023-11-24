@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import NavItems from "@/components/nav/nav-items";
 import useScroll from "@/lib/hooks/use-scroll";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button, Flex, IconButton, Tooltip } from "@radix-ui/themes";
@@ -63,12 +64,7 @@ export default function Nav() {
             gap="4"
             align="center"
           >
-            <NavLink href="/" title="home" />
-            <NavLink href="/about" title="about" />
-            <NavLink href="/work" title="work" />
-            <NavLink href="/skills" title="skills" />
-            <NavLink href="/gallery" title="gallery" />
-            <NavLink href="/contact" title="contact" />
+            <NavItems NavLinkComponent={NavLink} />
             <ThemeButton />
           </Flex>
         </Flex>
