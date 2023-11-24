@@ -13,14 +13,15 @@ const components = {
   ),
 };
 
-export default async function MarkDownTextWithLinebreaks(props: any) {
+export default async function MarkDownTextWithLinebreaks(props: {
+  text: string;
+}) {
   const { text } = props;
   if (!text) return null;
-  console.log("michaeltext", text);
   const lines = text.split("\\n");
   return (
     <>
-      {lines.map((line, index) => (
+      {lines.map((line) => (
         <>
           <Suspense fallback={<>Loading...</>}>
             <MDXRemote source={line} components={{ ...components }} />

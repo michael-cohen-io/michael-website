@@ -7,7 +7,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
 
 import { LoadingSpinner } from "../loading";
-import { TextWithLineBreaks } from "../typography/text";
+import TextWithLineBreaks from "../typography/text";
 
 export type NFT = {
   identifier: string;
