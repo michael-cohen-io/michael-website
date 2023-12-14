@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 import { InvertedButton, StandardButton } from "@/components/button/button";
 import useMediaQuery from "@/lib/hooks/use-media-query";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { Flex, Grid, Strong, Text } from "@radix-ui/themes";
+import { Flex, Strong, Text } from "@radix-ui/themes";
 
 export default function About() {
   const [textRevealed, setTextRevealed] = useState(false);
