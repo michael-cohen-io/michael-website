@@ -86,7 +86,7 @@ function MobileMenuContent() {
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="system">
       <MobileMenuProvider>
         <MobileMenu>
           <MobileMenuContent />

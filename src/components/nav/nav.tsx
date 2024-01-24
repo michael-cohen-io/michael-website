@@ -71,12 +71,12 @@ export default function Nav() {
         {/* Mobile Menu */}
         <Flex
           height="max-content"
-          width="100%"
           display={{ initial: "flex", md: "none" }}
-          px="4"
+          px="1"
           py="4"
           align="center"
           justify="between"
+          className="w-screen"
         >
           <Link href="/" className="flex items-center text-3xl select-none">
             <Heading color="pink" size="7" weight="regular">

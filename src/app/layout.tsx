@@ -46,7 +46,7 @@ export default function RootLayout({
               <Nav />
             </Suspense>
             <main>
-              <Container mt="9" className="min-h-screen">
+              <Container mt="9" className="min-h-screen min-w-full">
                 {children}
               </Container>
               <Footer />

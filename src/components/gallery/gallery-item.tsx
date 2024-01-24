@@ -88,8 +88,8 @@ export default function GalleryItem({
         <Dialog.Trigger>
           <Card
             size="2"
-            style={{ width: `${isMobile ? "40vw" : "20vw"}` }}
-            className="GalleryCard"
+            style={{ width: `${isMobile ? "40vw" : "25vw"}` }}
+            className="GalleryCard ms:m-0 md:m-2"
           >
             <Inset clip="border-box" side="top" pb="current">
               {cardImage}
