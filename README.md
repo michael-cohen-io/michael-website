@@ -13,3 +13,4 @@
 - lighter nav colors
 - add clad to work
 - fix gallery load
+- fix mobile card height
