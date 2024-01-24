@@ -11,6 +11,21 @@ const nextConfig = {
         hostname: "i.seadn.io",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "ipfs.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "nfts.renga.racing",
+        port: "",
+      },
     ],
   },
 };

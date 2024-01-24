@@ -107,7 +107,7 @@ export default function About() {
             <br />
             <Flex
               direction={{ initial: "column", md: "row" }}
-              align={{ initial: "center", md: "start" }}
+              align={{ md: "start" }}
             >
               <StandardButton href="/work">
                 read about my work experience
@@ -117,7 +117,7 @@ export default function About() {
               are you more oldschool? read on at
               <Flex
                 direction={{ initial: "column", md: "row" }}
-                align={{ initial: "center", md: "start" }}
+                align={{ md: "start" }}
               >
                 <InvertedButton href="/MichaelCohenResume.pdf" className="mt-2">
                   my_resume_final_final_copy_NEW.pdf
@@ -141,7 +141,7 @@ export default function About() {
               mb="4"
             >
               <Image
-                src="/contact.jpeg"
+                src="/profile.jpg"
                 alt="Michael Profile image"
                 style={{
                   height: "100%",
