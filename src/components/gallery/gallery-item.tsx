@@ -96,7 +96,7 @@ export default function GalleryItem({
             <Flex gap="4" align="center">
               <Box>
                 <Text size="3" weight="bold">
-                  {shorten(item.name ? item.name : tokenIdentification, 20)}
+                  {shorten(item.name ? item.name : tokenIdentification, isMobile? 10 : 20)}
                 </Text>
                 <Text as="div" color="gray" size="2">
                   {shorten(item.name ? tokenIdentification : "OpenSea", 20)}
