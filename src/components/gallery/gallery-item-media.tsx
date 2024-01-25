@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NFT, NFTMedia } from "@/lib/types";
-import Heading from "../typography/heading";
 
 const CardItemImage = ({ item, media }: { item: NFT; media: NFTMedia }) => {
   return (
