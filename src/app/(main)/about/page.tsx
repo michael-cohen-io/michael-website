@@ -85,7 +85,7 @@ export default function About() {
                   </Link>
                 </Strong>
               </Text>
-              . Our team helps telecom companies find, manage, and pay contractors, all in one place.
+              . Our team is building a way for network operators and contractors to work better together, saving time and money when building out communications networks..
             </Text>
             <br />
             <Text size="2">
