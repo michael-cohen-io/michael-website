@@ -72,30 +72,20 @@ export default function About() {
               </Flex>
               <Flex gap="2">
                 <ArrowRightIcon />
-                sometimes I design things,
-              </Flex>
-              <Flex gap="2">
-                <ArrowRightIcon />
-                and I&apos;m available for hire.
+                and a product builder,
               </Flex>
             </Text>
             <br />
             <Text size="2">
-              I currently work as the Engineering Manager for the Creator team
-              at{" "}
-              <Text color="blue">
+              I currently work as a Founding Engineer at {" "}
+              <Text color="purple">
                 <Strong>
-                  <Link href="https://opensea.io/" className="hover:underline">
-                    OpenSea
+                  <Link href="https://withclad.com/" className="hover:underline">
+                    Clad
                   </Link>
                 </Strong>
               </Text>
-              . Our team is dedicated to furnishing top-tier tools tailored for
-              creators, all available conveniently and safely within
-              OpenSea&apos;s Creator Studio. We aim to be the most trusted and
-              versatile tool for any crypto-curious creators who are looking to
-              enter the world of web3 without needing to know its highly
-              technical details.
+              . Our team helps telecom companies find, manage, and pay contractors, all in one place.
             </Text>
             <br />
             <Text size="2">

@@ -36,6 +36,7 @@ import {
 
 import OpenSeaIcon from "./OpenSeaIcon";
 import UFIcon from "./UFIcon";
+import CladIcon from "./CladIcon";
 
 const IconName = {
   AMAZON: "AMAZON",
@@ -51,6 +52,7 @@ const IconName = {
   CATAN: "CATAN",
   UF: "UNIVERSITY OF FLORIDA",
   OPENSEA: "OPENSEA",
+  CLAD: "CLAD",
   WEBDEV: "WEBDEV",
   SWIFT: "SWIFT",
   PYTHON: "PYTHON",
@@ -136,6 +138,8 @@ export default function IconByName({
       return <UFIcon />;
     case IconName.OPENSEA:
       return <OpenSeaIcon />;
+    case IconName.CLAD:
+      return <CladIcon />;
     case IconName.FS:
       return <RiStackFill size={size} color={color} className={className} />;
     case IconName.DS:
