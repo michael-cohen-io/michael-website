@@ -20,3 +20,10 @@ export function shorten(str: string, length: number) {
 export function isDev(): boolean {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "development";
 }
+
+export function toImageSrc(url: string): string {
+  if (url.startsWith("ipfs://")) {
+    return `https://ipfs.io/ipfs/${url.slice(7)}`;
+  }
+  return url
+}

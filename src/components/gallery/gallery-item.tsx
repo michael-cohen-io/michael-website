@@ -8,21 +8,7 @@ import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
 
 import { LoadingSpinner } from "../loading";
 import TextWithLineBreaks from "../typography/text";
-
-export type NFT = {
-  identifier: string;
-  collection: string;
-  contract: string;
-  token_standard: string;
-  name: string;
-  description: string;
-  image_url: string;
-  metadata_url: string;
-  created_at: string;
-  updated_at: string;
-  is_disabled: true;
-  is_nsfw: true;
-};
+import { NFT } from "@/lib/types";
 
 const GalleryItemDialog = ({
   item,
@@ -87,7 +73,7 @@ export default function GalleryItem({
       <Dialog.Root>
         <Dialog.Trigger>
           <Card
-            style={{ width: `${isMobile ? "40vw" : "20vw"}` }}
+            style={{ width: `${isMobile ? "40vw" : "20vw"}`, height: `${isMobile ? "75vw" : "auto"}` }}
             className="GalleryCard"
           >
             <Inset clip="border-box" side="top" pb="current">
@@ -99,7 +85,7 @@ export default function GalleryItem({
                   {shorten(item.name ? item.name : tokenIdentification, isMobile? 10 : 20)}
                 </Text>
                 <Text as="div" color="gray" size="2">
-                  {shorten(item.name ? tokenIdentification : "OpenSea", 20)}
+                  {shorten(item.name ? tokenIdentification : "OpenSea", isMobile? 20 : 25)}
                 </Text>
               </Box>
             </Flex>

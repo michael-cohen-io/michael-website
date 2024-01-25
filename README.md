@@ -12,5 +12,6 @@
 - change engineering to engineer on contract
 - lighter nav colors
 - add clad to work
-- fix gallery load
-- fix mobile card height
+- fix gallery load card ui
+- move types to dedicated files / folders
+- infinite scroll for gallery
