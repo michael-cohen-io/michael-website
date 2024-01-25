@@ -74,7 +74,7 @@ export default function GalleryItem({
         <Dialog.Trigger>
           <Card
             style={{ width: `${isMobile ? "40vw" : "20vw"}`, height: `${isMobile ? "75vw" : "auto"}` }}
-            className="GalleryCard"
+            className="GalleryCard outline-none"
           >
             <Inset clip="border-box" side="top" pb="current">
               {cardImage}
