@@ -89,7 +89,7 @@ export default function GalleryItem({
           <Card
             size="2"
             style={{ width: `${isMobile ? "40vw" : "20vw"}` }}
-            className="GalleryCard ms:m-0 md:m-2"
+            className="GalleryCard"
           >
             <Inset clip="border-box" side="top" pb="current">
               {cardImage}

@@ -12,7 +12,7 @@ export default function Gallery({ children }: { children?: React.ReactNode }) {
       scrollbars="vertical"
       style={{ height: `${isMobile ? "75vh" : "70vh"}` }}
     >
-      <Grid columns={{ initial: "2", md: "4" }} >
+      <Grid columns={{ initial: "2", md: "4" }} gap="2" justify="between">
         {children}
       </Grid>
     </ScrollArea>
