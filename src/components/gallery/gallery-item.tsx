@@ -87,8 +87,6 @@ export default function GalleryItem({
       <Dialog.Root>
         <Dialog.Trigger>
           <Card
-          // TODO: remove?
-            // size="2"
             style={{ width: `${isMobile ? "40vw" : "20vw"}` }}
             className="GalleryCard"
           >
