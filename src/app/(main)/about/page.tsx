@@ -85,14 +85,14 @@ export default function About() {
                   </Link>
                 </Strong>
               </Text>
-              . Our team is building a way for network operators and contractors to work better together, saving time and money when building out communications networks..
+              . Our team is building a way for network operators and contractors to work better together, saving time and money when building out communications networks.
             </Text>
             <br />
             <Text size="2">
               Outside of my current role, I am a lifelong learner with an
-              interest in building interesting and useful things. I&apos;m a
-              huge music fan, an amateur cook, a novice snowboarder, and
-              sometimes I pretend to be fashionable.
+              interest in building interesting, useful, and beautiful things. I&apos;m a
+              huge music fan, an okay cook, a novice snowboarder, and
+              sometimes I pretend to know how to dress.
             </Text>
             <br />
             <Flex

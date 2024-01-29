@@ -50,7 +50,7 @@ export default function ContactPage() {
                 color="gray"
                 align={{ initial: "center", sm: "left" }}
               >
-                Engineering
+                Engineer
               </Text>
               <Flex direction="column">
                 <Flex justify="start" align="center" gap="2">
