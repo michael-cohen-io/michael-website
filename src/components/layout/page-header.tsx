@@ -10,7 +10,7 @@ export default function PageHeader({
   title?: string;
   hidden?: boolean;
 }) {
-  return title ? (
+  return title && !hidden ? (
     <>
       <Flex
         mt={{ xs: "0", md: "8" }}

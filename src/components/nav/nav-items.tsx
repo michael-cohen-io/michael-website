@@ -8,7 +8,6 @@ export default function NavItems({
   return (
     <>
       <NavLinkComponent href="/" title="home" />
-      <NavLinkComponent href="/about" title="about" />
       <NavLinkComponent href="/work" title="work" />
       <NavLinkComponent href="/skills" title="skills" />
       <NavLinkComponent href="/gallery" title="gallery" />

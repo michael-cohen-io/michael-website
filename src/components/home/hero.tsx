@@ -87,7 +87,8 @@ const thirdTypingBlock = (typeCounter: number, onTypingDone: () => void) => (
   </>
 );
 
-export default function Hero() {
+// eslint-disable-next-line no-unused-vars
+export default function Hero({setHomeDisplayed}: { setHomeDisplayed: (_: boolean) => void }){
   const [typeCounter, setTypeCounter] = useState(0);
 
   const onTypingDone = () => {
@@ -127,6 +128,7 @@ export default function Hero() {
             duration={1500}
             distance="30px"
             when={typeCounter > 2 || !showTyping}
+            onReveal={() => setHomeDisplayed(true)}
           >
             <Image
               src="/profile.jpg"
