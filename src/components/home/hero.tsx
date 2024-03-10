@@ -10,6 +10,7 @@ import { isDev } from "@/lib/utils";
 import { Code, Flex, Grid, Heading, Strong } from "@radix-ui/themes";
 
 import PageHeader from "../layout/page-header";
+import useMediaQuery from "@/lib/hooks/use-media-query";
 
 const firstTextBlock = (
   <Code weight="bold" variant="soft" size={{ initial: "8", md: "9" }}>
@@ -92,9 +93,19 @@ export default function Hero({setHomeDisplayed}: { setHomeDisplayed: (_: boolean
   const [typeCounter, setTypeCounter] = useState(0);
 
   const onTypingDone = () => {
-    setTypeCounter(typeCounter + 1);
+    setTypeCounter((prev) => {
+      if (prev === 2 && isMobile) {
+        setHomeDisplayed(true);
+      }
+      return prev + 1;
+    });
   };
   const showTyping = !isDev();
+  const { isMobile } = useMediaQuery();
+
+  if (isMobile && !showTyping) {
+    setHomeDisplayed(true);
+  }
 
   return (
     <>
